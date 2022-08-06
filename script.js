@@ -1,4 +1,48 @@
+class Vehiculos{
+    constructor(marca,modelo,velocidad,precio,){
+        this.marca = marca;
+        this.modelo = modelo;
+        this.velocidad = velocidad;
+        this.precio = precio;
+    }
+}
+
+const bugatti = new Vehiculos ("bugatti","Chiron","407 Km/h",870000);
+const mcLaren = new Vehiculos ("McLaren","MP412C","326 Km/h",380000);
+const ferrari = new Vehiculos ("Ferrari","GTE","335 Km/h",275000);
+const ford = new Vehiculos ("Ford","mustand","350Km/h",550000);
+
+const autosCarrera = [bugatti,mcLaren,ferrari,ford];
+
+const conteiner = document.getElementById("cajaHijo");
+
+autosCarrera.forEach(carros =>{
+    conteiner.innerHTML += `
+    <div class="boxJs">
+        <div>
+            <h2>marca:${carros.marca}</h2>
+            <p>modelo:${carros.modelo}</p>
+            <p>velocidad:${carros.velocidad}</p>
+            <p>precio:$${carros.precio}</p>
+        </div>
+    </div>`
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //este codigo te permite comprar carros ingresando una cantidad de plata,podes comprarlo todos o de a uno.
+/*
 class Vehiculos{
     constructor(modelo,motor,velocidad,precio,){
         this.modelo = modelo;
@@ -59,33 +103,4 @@ do {
         alert("gracias por su compra");
     }
 } while (coche != 6);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*let sumaTotal = autosCarrera.map(autosarray => autosarray.precio);
-let sumaTotal,total,saldo;
-        do {
-            sumaTotal = autosCarrera.map(autosarray => autosarray.precio);
-            total = console.log(sumaTotal.reduce((pre,act)=> pre + act,0));
-            jugador = parseFloat(prompt("ingrese el monto total para comprar todos"));
-            if (jugador == total) {
-                console.log("gracias por su compra");
-            }else if(jugador>total){
-                saldo = jugador - total ;
-                console.log(`su compra fue exitosa,le sobra$${saldo}`);
-            }else if (jugador<total){
-                console.log("el dinero ingresado no es suficiente para comprar a todos los autos");
-            }
-        } while (jugador == total);
 */

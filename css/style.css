@@ -1,3 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo:wght@500&family=Koulen&family=Radio+Canada:wght@600&family=Roboto:ital,wght@0,400;1,300&family=Smooch&family=Tiro+Gurmukhi&family=Tiro+Telugu&family=Ubuntu:ital@1&display=swap');
+
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
 body{
-    background-color: rgb(44, 44, 44);
+    background-color:#ade8f4 ;
+    font-family: 'Roboto', sans-serif;
+    color: beige;
+}
+header{
+    background-color: #0096c7;
+    padding: 30px 0px;
+}
+footer{
+    background-color: #0096c7;
+    text-align: center;
+    margin-top: 10px;
+}
+div ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    list-style-type: none;
+    
+}
+a{
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 12px;
+    color: bisque;
+    font-size: x-large;
+}
+a:hover{
+    background-color: #0077b6  ;
+    padding: 12px 20px;
+    border-radius: 12px;
+}
+.box-titulo{
+    background-color: #0077b6;
+    padding: 10px 0px;
+    text-align: center;
+    margin-top: 5px;
+}
+.contenedor-padre{
+    display: flex;
+}
+.boxJs{
+    background-color: #023e8a;
+    flex-direction: row;
+    width: 250px;
+    height: 250px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
 }
