@@ -1,3 +1,39 @@
+
+
+//este codigo lo que hace es pidir datos al usuario en un formulario,donde puedo pedir informacion acerca de cierto vehiculo ,incorporando eventos y arrays y objetos.
+
+class Datos{
+    constructor(nombre,apellido,email,nota,telefono){
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.email = email;
+        this.nota = nota;
+        this.telefono = telefono;
+    }
+}
+
+const consultas = [];
+
+const formContacto = document.getElementById("cajaForm");
+
+formContacto.addEventListener(`submit`,(event)=>{
+    event.preventDefault();
+    let inputName = document.getElementById("inputName").value;
+    let inputSurName = document.getElementById("inputSurName").value;
+    let inputEmail= document.getElementById("inputEmail").value;
+    let inputText = document.getElementById("inputText").value;
+    let inputTel = document.getElementById("inputTel").value;
+
+    const consulta = new Datos (inputName,inputSurName,inputEmail,inputText,inputTel);
+    consultas.push(consulta);
+    console.log(consultas);
+});
+
+
+//este codigo te perimite ver distintas cartas en el html con una sola linea de codigo e incorporando desde javascript.
+//este codigo es del trabajo de array pero no puedo sobre escribirlo,por que el primero no se aplica.
+
+/*
 class Vehiculos{
     constructor(marca,modelo,velocidad,precio,){
         this.marca = marca;
@@ -23,21 +59,12 @@ autosCarrera.forEach(carros =>{
             <h2>marca:${carros.marca}</h2>
             <p>modelo:${carros.modelo}</p>
             <p>velocidad:${carros.velocidad}</p>
-            <p>precio:$${carros.precio}</p>
+            <p>precio:$${carros.precio}</p> <br>
+            <button>comprar</button>
         </div>
     </div>`
 })
-
-
-
-
-
-
-
-
-
-
-
+*/
 
 
 

@@ -7,16 +7,18 @@
 }
 
 body{
-    background-color:#ade8f4 ;
+    background-color:#ced4da;
     font-family: 'Roboto', sans-serif;
-    color: beige;
+    color:white;
 }
 header{
-    background-color: #0096c7;
     padding: 30px 0px;
+    text-transform: uppercase;
+}
+header,footer{
+    background-color: #495057;
 }
 footer{
-    background-color: #0096c7;
     text-align: center;
     margin-top: 10px;
 }
@@ -30,27 +32,40 @@ div ul{
 a{
     text-decoration: none;
     padding: 12px 20px;
-    border-radius: 12px;
-    color: bisque;
+    color: white;
     font-size: x-large;
 }
 a:hover{
-    background-color: #0077b6  ;
     padding: 12px 20px;
-    border-radius: 12px;
+    border: solid 2px #212529 ;
 }
 .box-titulo{
-    background-color: #0077b6;
-    padding: 10px 0px;
+    background-color: #343a40;
+    padding: 15px 0px;
     text-align: center;
     margin-top: 5px;
 }
-.contenedor-padre{
+.tituloForm{
+    background-color: #343a40;
+    padding: 20px 0px;
+    margin-top: 5px;
+    text-align: center;
+}
+.contenedor-form{
+    padding: 15px;
+}
+.caja-form{
+    background-color: #6c757d;
     display: flex;
+    flex-direction: column;
+    padding: 40px;
+    padding-left: 60px;
+    border-radius: 12px;
+    margin: 5% 20%;
 }
 .boxJs{
-    background-color: #023e8a;
-    flex-direction: row;
+    background-color: #6c757d;
+    display:inline-block;
     width: 250px;
     height: 250px;
     padding: 10px;

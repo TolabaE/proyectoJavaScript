@@ -12,13 +12,49 @@
         <div>
             <nav>
                 <ul>
-                    <li><a href="../index.html">inicio</a></li>
-                    <li><a href="pedidos.html">pedidos</a></li>
-                    <li><a href="contacto.html">contactos</a></li>
+                    <li>
+                        <a href="../index.html">inicio</a>
+                    </li>
+                    <li>
+                        <a href="pedidos.html">pedidos</a>
+                    </li>
+                    <li>
+                        <a href="contacto.html">contacto</a>
+                    </li>
                 </ul>
             </nav>
         </div>
     </header>
+    <div class="tituloForm">
+        <h1>Formulario de contacto</h1>
+    </div>
+    <div class="contenedor-form">
+        <form id="cajaForm" class="caja-form">
+            <div>
+                <p>Ingrese su nombre:</p>
+                <input type="text" placeholder="Nombre" id="inputName">
+                <p>Ingrese su apellido</p>
+                <input type="text" placeholder="Apellido" id="inputSurName">
+            </div>
+            <div>
+                <label for="email">Ingrese su email:</label>
+                <input type="email" name="" id="inputEmail">
+            </div>
+            <div>
+                <textarea id="inputText" cols="30" rows="10" placeholder="describa su consulta..."></textarea>
+            </div>
+            <div>
+                <p>
+                    Telefono de contacto. 
+                </p>
+                <input type="tel" name="" id="inputTel">
+            </div>
+            <div>
+                <button type="reset">cancelar</button>
+                <button type="submit" id="btenviar">enviar</button>
+            </div>
+        </form>
+    </div>
     <footer>
         <div>
             <p>Visitanos en nuestos sucursal mas cerca:</p>
@@ -27,5 +63,8 @@
             <p>www.ventavehiculos.com.ar</p>
         </div>
     </footer>
+
+    
+    <script src="../script.js"></script>
 </body>
 </html>
