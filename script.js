@@ -1,133 +1,66 @@
-
-
-//este codigo lo que hace es pidir datos al usuario en un formulario,donde puedo pedir informacion acerca de cierto vehiculo ,incorporando eventos y arrays y objetos.
-
-class Datos{
-    constructor(nombre,apellido,email,nota,telefono){
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.email = email;
-        this.nota = nota;
-        this.telefono = telefono;
-    }
-}
-
-const consultas = [];
-
-const formContacto = document.getElementById("cajaForm");
-
-formContacto.addEventListener(`submit`,(event)=>{
-    event.preventDefault();
-    let inputName = document.getElementById("inputName").value;
-    let inputSurName = document.getElementById("inputSurName").value;
-    let inputEmail= document.getElementById("inputEmail").value;
-    let inputText = document.getElementById("inputText").value;
-    let inputTel = document.getElementById("inputTel").value;
-
-    const consulta = new Datos (inputName,inputSurName,inputEmail,inputText,inputTel);
-    consultas.push(consulta);
-    console.log(consultas);
-});
-
-
 //este codigo te perimite ver distintas cartas en el html con una sola linea de codigo e incorporando desde javascript.
-//este codigo es del trabajo de array pero no puedo sobre escribirlo,por que el primero no se aplica.
 
-/*
-class Vehiculos{
-    constructor(marca,modelo,velocidad,precio,){
+class Herramientas{
+    constructor(marca,modelo,detalle,precio){
         this.marca = marca;
         this.modelo = modelo;
-        this.velocidad = velocidad;
+        this.detalle= detalle;
         this.precio = precio;
     }
 }
+const pico = new Herramientas ("Pico","GHERARDI","De Acero Forgado",8000);
+const pala = new Herramientas ("Pala","GHERARDI","De Acero Forgajo",7500);
+const machete = new Herramientas ("Machete","BELLOTA","colombiano acero profesional",3000);
+const carpidor = new Herramientas ("Carpidor","BALDAN","carpidor de arrastre",12000);
+const hacha = new Herramientas ("Hacha de mano","TRAMONTINA","de acero y mango de madera",2400);
 
-const bugatti = new Vehiculos ("bugatti","Chiron","407 Km/h",870000);
-const mcLaren = new Vehiculos ("McLaren","MP412C","326 Km/h",380000);
-const ferrari = new Vehiculos ("Ferrari","GTE","335 Km/h",275000);
-const ford = new Vehiculos ("Ford","mustand","350Km/h",550000);
-
-const autosCarrera = [bugatti,mcLaren,ferrari,ford];
-
+const depositoUno = [carpidor,pico,pala,machete,hacha];
 const conteiner = document.getElementById("cajaHijo");
 
-autosCarrera.forEach(carros =>{
+depositoUno.forEach(cosas =>{
     conteiner.innerHTML += `
     <div class="boxJs">
         <div>
-            <h2>marca:${carros.marca}</h2>
-            <p>modelo:${carros.modelo}</p>
-            <p>velocidad:${carros.velocidad}</p>
-            <p>precio:$${carros.precio}</p> <br>
-            <button>comprar</button>
+            <h2>${cosas.marca}</h2>
+            <p>marca: ${cosas.modelo}</p>
+            <p>${cosas.detalle}</p>
+            <p>precio:$${cosas.precio}</p> <br>
+            <button class="boton">comprar</button>
         </div>
     </div>`
-})
-*/
+});
 
-
-
-//este codigo te permite comprar carros ingresando una cantidad de plata,podes comprarlo todos o de a uno.
-/*
-class Vehiculos{
-    constructor(modelo,motor,velocidad,precio,){
-        this.modelo = modelo;
-        this.motor = motor;
-        this.velocidad = velocidad;
+class Hogar{
+    constructor(Herramientas,detalle,precio){
+        this.Herramientas = Herramientas;
+        this.detalle = detalle;
         this.precio = precio;
     }
 }
 
-const bugatti = new Vehiculos ("bugatti","Chiron","407 Km/h",870000);
-const McLaren = new Vehiculos ("McLaren","MP412C","326 Km/h",380000);
-const ferrari = new Vehiculos ("ferrari","599 GTE","335 Km/h",275000);
-const lamborghini = new Vehiculos ("lamborghini","aventador","350Km/h",550000);
+const tenaza = new Hogar ("Tenaza","acero forjado medio corte 22,5 cm",3170);
+const pinza = new Hogar ("Pinza","de agarre medio cabo naranja",1250);
+const plomadin = new Hogar ("Plomada Albañil","peso de 300 gr toth industria nacional",870);
+const cuchara = new Hogar ("Cuchara Albañil","acero reforzada punta redonda profesional",650);
+const balde = new Hogar ("Balde","acero galbanizado de 15 lt ultra resistente",2100);
 
-const autosCarrera = [bugatti,McLaren,ferrari,lamborghini];
+const Plomeria = [tenaza,pinza,plomadin,cuchara,balde];
+const contenedorPlomeria = document.getElementById("cajaDos");
 
-function compra(plata = 0,precio = 0){
-    let vuelto = plata - precio;
-    if(vuelto>0){
-        console.log(`su compra fue exitosa,le sobra $ ${vuelto}.`);
-    }else if(vuelto<0){
-        console.log("el dinero ingresado no es suficiente,eliga otro carro mas barato");
-    }else{
-        console.log("gracias por su compra,puede seguir comprando")
-    }
-}
+Plomeria.forEach(cosas2 =>{
+    contenedorPlomeria.innerHTML +=`
+    <div class="boxDos">
+        <div>
+            <h2>${cosas2.Herramientas}</h2>
+            <p>${cosas2.detalle}</p>
+            <p>precio:$${cosas2.precio}</p> <br>
+            <button class="boton">comprar</button>
+        </div>
+    </div>
+    `
+});
 
-let jugador,coche;
 
-do {
-    alert("elija un coche para comprar");
-    coche = parseFloat(prompt(`selecione la opcion de acuerdo al numero \n 1-bugatti \n 2-McLaren \n 3- ferrari \n 4- lamborghini \n 5-comprar todos los autos \n 6-finalizar compra`));
-    if(coche ==1){
-        console.table(autosCarrera[0])
-        jugador = parseFloat(prompt("ingrese el monto para comprarlo"));
-        compra(jugador,bugatti.precio);
-    }else if (coche == 2){
-        console.table(autosCarrera[1]);
-        jugador = parseFloat(prompt("ingrese el monto para comprarlo"));
-        compra(jugador,McLaren.precio);
-    }else if (coche == 3){
-        console.table(autosCarrera[2]);
-        jugador = parseFloat(prompt("ingrese el monto para comprarlo"));
-        compra(jugador,ferrari.precio);
-    }else if (coche == 4){
-        console.table(autosCarrera[3]);
-        jugador = parseFloat(prompt("ingrese el monto para comprarlo"));
-        compra(jugador,lamborghini.precio);
-    }else if (coche == 5){
-        const sumaTotal = autosCarrera.map(autosarray => autosarray.precio);
-        console.log(sumaTotal.reduce((pre,act)=> pre + act,0));
-        jugador = parseFloat(prompt("ingrese el monto total para comprar todos"));
-        compra(jugador,sumaTotal);
-    }
-    else if ((coche < 1) || (coche > 6)){
-        alert("numero ingresado no valido");
-    }else if(coche == 6){
-        alert("gracias por su compra");
-    }
-} while (coche != 6);
-*/
+
+
+

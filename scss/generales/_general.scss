@@ -1,0 +1,126 @@
+
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+body{
+    background-color: $paleta-color5;
+    font-family: 'Roboto', sans-serif;
+    color:white;
+}
+
+@media (min-width:768px){
+    .contenedor-navbar{
+        .navbar-color{
+            background-color: $paleta-color1;
+            color: beige;
+
+            div{
+                .navbar-brand{
+                    color: antiquewhite;
+                    text-transform: uppercase;
+                }
+
+                ul{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-around;
+                    list-style-type: none;
+
+                    li{
+                        padding-left: 30px;
+
+                        a{
+                            text-decoration: none;
+                            padding: 12px 20px;
+                            color: white;
+                            font-size: x-large;
+                        }
+                        .imgNav{
+                            width: 35px;
+                        }
+                    }
+                }
+                .btn{
+                    color: white;
+                    background-color: $paleta-color4;
+                }    
+            }
+        }
+    }
+    .box-titulo{
+        background-color: $paleta-color1;
+        padding: 15px 0px;
+        text-align: center;
+        margin-top: 5px;
+    }
+    .tituloDiv{
+        background-color: $paleta-color3;
+        padding: 20px 0px;
+        margin-top: 5px;
+        text-align: center;
+    }
+    .seccion-uno{
+        padding: 20px;
+
+        #cajaHijo{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            padding: 20px;
+    
+            .boxJs{
+                display: inline-block;
+                background-color: $paleta-color2;
+                padding: 10px;
+                border-radius: 10px;
+                border: 3px solid $paleta-color4;
+                margin: 10px;
+    
+                button{
+                    margin-left: 30%;
+                }
+            }
+        }
+    }
+    .seccion-dos{
+        padding: 20px;
+
+        #cajaDos{
+            display: flex;
+            flex-direction: row;
+            justify-content:space-around;
+            padding: 20px;
+
+            .boxDos{
+                display: inline-block;
+                background-color: $paleta-color2;
+                padding: 10px;
+                border-radius: 10px;
+                border: 3px solid $paleta-color4;
+                margin: 10px;
+    
+                button{
+                    margin-left: 30%;
+                }
+            }
+        }
+    }
+    footer{
+        background-color:$paleta-color1;
+        text-align: center;
+        padding: 5px;
+    }
+    .contenedor-form{
+
+        .caja-form{
+            background-color: $paleta-color2;
+            padding: 20px;
+            padding-left: 50px;
+            border-radius: 10px;
+            margin: 5% 30%;
+
+        }
+    }
+}
