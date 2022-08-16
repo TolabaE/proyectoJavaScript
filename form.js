@@ -11,7 +11,10 @@ class Datos{
 }
 
 const consultas = [];
+
 const formContacto = document.getElementById("cajaForm");
+const button = document.getElementById("btnPedir");
+const cajaDatos = document.getElementById("contenedor-opinion");
 
 formContacto.addEventListener(`submit`,(event)=>{
     event.preventDefault();
@@ -22,4 +25,28 @@ formContacto.addEventListener(`submit`,(event)=>{
     consultas.push(consulta);
     localStorage.setItem("consultas",JSON.stringify(consultas));
     formContacto.reset();
+});
+
+//este codigo nos permite que el usuario al ingresar su consulta y enviarlo puede visualizarlo 
+//al hacer click en ver preguntas frecuentes pueda visualizarla en el DOM.
+
+button.addEventListener(`click`,()=>{
+    const datosLocales = JSON.parse(localStorage.getItem(consultas));
+
+    cajaDatos.innerHTML = "";
+    datosLocales.forEach(consultas => {
+        cajaDatos.innerHTML +=`
+        <div class="card box" id="datos">
+            <div class="card-header">
+                <h3 class="card-title">${consultas.nombre}</h3>
+                <h4 class="card-title">${consultas.apellido}</h4>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">${consultas.email}</h5>
+                <p class="card-text">${consultas.nota}</p>
+                <p class="card-text">${consultas.telefono}</p>
+                <button class="btn btn-primary"></button>
+            </div>
+        </div>`
+    });
 });

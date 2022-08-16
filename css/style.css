@@ -8,13 +8,14 @@ body {
   font-family: 'Roboto', sans-serif;
   color: white; }
 
-@media (min-width: 768px) {
+@media (min-width: 320px) {
   .contenedor-navbar .navbar-color {
     background-color: #0077b6;
     color: beige; }
     .contenedor-navbar .navbar-color div .navbar-brand {
       color: antiquewhite;
-      text-transform: uppercase; }
+      text-transform: uppercase;
+      font-weight: 600; }
     .contenedor-navbar .navbar-color div ul {
       display: flex;
       flex-direction: row;
@@ -32,55 +33,113 @@ body {
     .contenedor-navbar .navbar-color div .btn {
       color: white;
       background-color: #03045e; }
-  .box-titulo {
-    background-color: #0077b6;
-    padding: 15px 0px;
-    text-align: center;
-    margin-top: 5px; }
   .tituloDiv {
     background-color: #5fa8d3;
     padding: 20px 0px;
     margin-top: 5px;
     text-align: center; }
-  .seccion-uno {
-    padding: 20px; }
-    .seccion-uno #cajaHijo {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-around;
-      padding: 20px; }
-      .seccion-uno #cajaHijo .boxJs {
-        display: inline-block;
-        background-color: #3d8ef8;
-        padding: 10px;
-        border-radius: 10px;
-        border: 3px solid #03045e;
-        margin: 10px; }
-        .seccion-uno #cajaHijo .boxJs button {
-          margin-left: 30%; }
-  .seccion-dos {
-    padding: 20px; }
-    .seccion-dos #cajaDos {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-around;
-      padding: 20px; }
-      .seccion-dos #cajaDos .boxDos {
-        display: inline-block;
-        background-color: #3d8ef8;
-        padding: 10px;
-        border-radius: 10px;
-        border: 3px solid #03045e;
-        margin: 10px; }
-        .seccion-dos #cajaDos .boxDos button {
-          margin-left: 30%; }
   footer {
     background-color: #0077b6;
     text-align: center;
-    padding: 5px; }
+    padding: 5px; } }
+
+@media (min-width: 320px) {
+  .box-titulo {
+    background-color: #0077b6;
+    padding: 15px 0px;
+    text-align: center;
+    margin-top: 5px; }
+  .seccion-uno {
+    padding: 10px; }
+    .seccion-uno #cajaUno {
+      display: flex;
+      flex-wrap: wrap;
+      align-content: stretch; }
+      .seccion-uno #cajaUno .boxJs {
+        margin: auto;
+        margin-top: 10px; }
+        .seccion-uno #cajaUno .boxJs .card {
+          width: 11rem;
+          height: 24rem;
+          color: black;
+          background-color: #3d8ef8;
+          border: 2px solid #03045e;
+          margin: 5px; }
+          .seccion-uno #cajaUno .boxJs .card .card-img-top {
+            width: 172px;
+            height: 140px; }
+          .seccion-uno #cajaUno .boxJs .card button {
+            margin-left: 25px; }
+  .seccion-dos {
+    padding: 10px; }
+    .seccion-dos #cajaDos {
+      display: flex;
+      flex-wrap: wrap;
+      align-content: stretch; }
+      .seccion-dos #cajaDos .boxDos {
+        margin: auto;
+        margin-top: 10px; }
+        .seccion-dos #cajaDos .boxDos .card {
+          width: 11rem;
+          height: 24rem;
+          color: black;
+          background-color: #3d8ef8;
+          border: 2px solid #03045e;
+          margin: 5px; }
+          .seccion-dos #cajaDos .boxDos .card .card-img-top {
+            width: 172px;
+            height: 140px; }
+          .seccion-dos #cajaDos .boxDos .card button {
+            margin-left: 25px; }
   .contenedor-form .caja-form {
     background-color: #3d8ef8;
     padding: 20px;
     padding-left: 50px;
     border-radius: 10px;
     margin: 5% 30%; } }
+
+@media (min-width: 768px) {
+  .seccion-uno {
+    padding: 20px; }
+    .seccion-uno #cajaUno {
+      display: flex;
+      flex-wrap: wrap;
+      align-content: stretch;
+      padding: 20px; }
+      .seccion-uno #cajaUno .boxJs {
+        margin: auto;
+        padding: 10px; }
+        .seccion-uno #cajaUno .boxJs .card {
+          width: 16rem;
+          height: 30rem;
+          color: black;
+          background-color: #3d8ef8;
+          border: 2px solid #03045e;
+          margin: 10px; }
+          .seccion-uno #cajaUno .boxJs .card button {
+            margin-left: 30%; }
+          .seccion-uno #cajaUno .boxJs .card .card-img-top {
+            width: 252px;
+            height: 240px; }
+  .seccion-dos {
+    padding: 20px; }
+    .seccion-dos #cajaDos {
+      display: flex;
+      flex-wrap: wrap;
+      align-content: stretch;
+      padding: 20px; }
+      .seccion-dos #cajaDos .boxDos {
+        padding: 10px;
+        margin: auto; }
+        .seccion-dos #cajaDos .boxDos .card {
+          width: 16rem;
+          height: 30rem;
+          color: black;
+          background-color: #3d8ef8;
+          border: 2px solid #03045e;
+          margin: 10px; }
+          .seccion-dos #cajaDos .boxDos .card button {
+            margin-left: 30%; }
+          .seccion-dos #cajaDos .boxDos .card .card-img-top {
+            width: 252px;
+            height: 240px; } }
