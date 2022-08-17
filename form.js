@@ -11,6 +11,11 @@ class Datos{
 }
 
 const consultas = [];
+if (localStorage.getItem("consultas")) {
+    tareas = JSON.parse(localStorage.getItem("consultas"));
+} else {
+    localStorage.setItem("consultas",JSON.stringify("consultas"));
+}
 
 const formContacto = document.getElementById("cajaForm");
 const button = document.getElementById("btnPedir");
@@ -32,8 +37,7 @@ formContacto.addEventListener(`submit`,(event)=>{
 
 button.addEventListener(`click`,()=>{
     const datosLocales = JSON.parse(localStorage.getItem(consultas));
-
-    cajaDatos.innerHTML = "";
+    //no me permite obtener los datos del localstorage.
     datosLocales.forEach(consultas => {
         cajaDatos.innerHTML +=`
         <div class="card box" id="datos">
