@@ -33,12 +33,12 @@ formContacto.addEventListener(`submit`,(event)=>{
     formContacto.reset();
 });
 
+//permite obtener los datos del localstorage.
+const datosLocales = JSON.parse(localStorage.getItem("consultas"));
+
 //este codigo nos permite que el usuario al ingresar su consulta y enviarlo puede visualizarlo en el DOM 
 //al hacer click en ver preguntas frecuentes.
-
 button.addEventListener(`click`,()=>{
-    const datosLocales = JSON.parse(localStorage.getItem("consultas"));
-    //permite obtener los datos del localstorage.
     datosLocales.forEach((consultas,index) => {
         cajaDatos.innerHTML +=`
         <div class="card box" id="datos${index}">
