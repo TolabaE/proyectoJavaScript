@@ -75,11 +75,10 @@
 
         .caja-form{
             background-color: $paleta-color2;
-            padding: 20px;
-            padding-left: 50px;
+            padding: 30px;
+            padding-left: 30px;
             border-radius: 10px;
-            margin: 5% 30%;
-
+            margin: 10px 40px;
         }
     }
 }
@@ -147,5 +146,24 @@
                 }    
             }
         }
+    }
+
+    .contenedor-form{
+
+        .caja-form{
+            background-color: $paleta-color2;
+            padding: 20px;
+            padding-left: 50px;
+            border-radius: 10px;
+            margin: 5% 30%;
+
+        }
+    }
+    .opinion-padre{
+        .card{
+            background-color: $paleta-color2;
+            margin: 10px 10%;  
+        }
+        
     }
 }

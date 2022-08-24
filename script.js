@@ -1,25 +1,29 @@
 //este codigo te perimite ver distintas cartas en el html con una sola linea de codigo e incorporando desde javascript.
 
 class Herramientas{
-    constructor(nombre,marca,detalle,precio,img){
+    constructor(stock,nombre,marca,precio,img){
+        this.stock = stock;
         this.nombre = nombre;
         this.marca = marca;
-        this.detalle= detalle;
         this.precio = precio;
         this.img = img;
     }
 }
 
-const pico = new Herramientas ("Pico","Gherardi","De Acero Forgado",8000,"https://image.made-in-china.com/155f0j00ZpOUTDfKbykH/Agriculture-Tool-Steel-Mattock-Head-P404-Pickaxe.jpg");
-const pala = new Herramientas ("Pala","Gherardi","De Acero Forgajo",7500,"http://d3ugyf2ht6aenh.cloudfront.net/stores/001/127/623/products/894981-7acbaa455af52d1eeb16110644726447-640-0.jpg");
-const machete = new Herramientas ("Machete","BELLOTA","colombiano acero profesional",3000,"https://www.gherardi.com.ar/wp-content/uploads/2018/01/Machete-2-270x395.jpg");
-const carpidor = new Herramientas ("Carpidor","BALDAN","carpidor de arrastre",12000,"https://argentina.agrofystatic.com/media/catalog/product/cache/1/image/850x600/0dc2d03fe217f8c83829496872af24a0/c/a/carpidor-agro-ras-de-6-surcos--Quebrada-Verde-agrofy-0-20211217200422.jpg?usewebp=true");
-const hacha = new Herramientas ("Hacha","Tramontina","de acero y mango de madera",2400,"https://www.bimat.com.ar/images/W-23181608126706830.jpg");
-const maquina = new Herramientas ("M.Fumigadora","Jacto","presion a bomba de 16 lt",15000,"https://m.media-amazon.com/images/I/412ZvrJIfRL._SL500_.jpg");
-const asadon = new Herramientas ("Asadon","Bellota","con mango de madera",1300,"https://img.agriexpo.online/es/images_ag/photo-mg/176021-15474954.webp");
-const botas = new Herramientas ("Botas","Pampero","Botas negras de Goma T 42",2900,"https://image.made-in-china.com/202f0j10dnSQjRHsyqoB/High-Quality-Working-Industrial-Labor-Safety-PVC-Gum-Rain-Boots.jpg");
+const pico = new Herramientas (25,"Pico","Gherardi",8000,"https://image.made-in-china.com/155f0j00ZpOUTDfKbykH/Agriculture-Tool-Steel-Mattock-Head-P404-Pickaxe.jpg");
+const pala = new Herramientas (20,"Pala","Gherardi",7500,"http://d3ugyf2ht6aenh.cloudfront.net/stores/001/127/623/products/894981-7acbaa455af52d1eeb16110644726447-640-0.jpg");
+const machete = new Herramientas (10,"Machete","Bellota",3000,"https://www.gherardi.com.ar/wp-content/uploads/2018/01/Machete-2-270x395.jpg");
+const carpidor = new Herramientas (12,"Carpidor","Baldan",12000,"http://jhartwich.com.uy/media/catalog/products/images/CZ_620.png");
+const hacha = new Herramientas (15,"Hacha","Tramontina",2400,"https://www.bimat.com.ar/images/W-23181608126706830.jpg");
+const maquina = new Herramientas (10,"Fumigadora","Jacto",15000,"https://m.media-amazon.com/images/I/412ZvrJIfRL._SL500_.jpg");
+const asadon = new Herramientas (20,"Asadon","Bellota",1300,"https://img.agriexpo.online/es/images_ag/photo-mg/176021-15474954.webp");
+const botas = new Herramientas (15,"Botas","Pampero",2900,"https://image.made-in-china.com/202f0j10dnSQjRHsyqoB/High-Quality-Working-Industrial-Labor-Safety-PVC-Gum-Rain-Boots.jpg");
+const horquilla = new Herramientas (20,"Horquilla","Tramontina",2350,"https://www.fielex.com.uy/content/images/thumbs/0080895_horquilla-cmango-120cm-4-dientes-tramontina_600.jpeg");
+const rastrillo = new Herramientas (25,"Rastrillo","Gherardi",1450,"http://www.chayto.com.ar/fotos/rastrillo-chayto.jpg");
+const carreta = new Herramientas (5,"Carretilla","Baldan",25000,"https://arcencohogar.vtexassets.com/arquivos/ids/269801/1002766.jpg?v=637651551889900000");
+const cortador = new Herramientas (8,"Motoguadaña","Stihl FS 420",55000,"https://nogalpark.com/archivos/recortes/motoguadana-stihl-fs-450-nogalpark.jpg");
 
-const depositoUno = [carpidor,pico,pala,machete,hacha,maquina,asadon,botas];
+const depositoUno = [carpidor,pico,pala,machete,hacha,maquina,asadon,botas,horquilla,rastrillo,carreta,cortador];
 const conteiner = document.getElementById("cajaUno");
 
 depositoUno.forEach((cosas,indice) =>{
@@ -28,9 +32,9 @@ depositoUno.forEach((cosas,indice) =>{
         <div class="card"  id="producto${indice}">
             <img src="${cosas.img}" class="card-img-top" alt="imagen del producto">
             <div class="card-body">
-                <h5 class="card-title">${cosas.nombre}</h5>
-                <h4 class="card-title">${cosas.marca}</h4>
-                <p class="card-text">${cosas.detalle}</p>
+                <h4 class="card-title">${cosas.nombre}</h4>
+                <p class="card-text">${cosas.marca}</p>
+                <h6 class="card-text">stock:${cosas.stock} unidades</h6>
                 <h3 class="card-text">$${cosas.precio}</h3>
                 <button class="btn btn-primary" id="btn-agregar">agregar</button>
             </div>
@@ -38,20 +42,22 @@ depositoUno.forEach((cosas,indice) =>{
     </div>`
 });
 
-const cajaCompra = document.getElementById("caja-changito");
+const conteinerChanguito = document.getElementById("conteiner-changuito");
+const botonVerCarrito = document.getElementById("boton-ver-carrito");
 const changito = [];
-
+/*
 if (localStorage.getItem("changito")) {
-    tareas = JSON.parse(localStorage.getItem("changito"));
-} else {
-    localStorage.setItem("changito",JSON.stringify("changito"));
-}
+    JSON.parse(localStorage.getItem("changito"));
+}else{
+    localStorage.setItem("changito",JSON.stringify("changito"))
+}*/
 
-//Este codigo recorre cada una de las card del arrays y al presionar el botton agregar,agrega un evento, guardar los datos
-//en el localstorage y mostrarle en el dom.
+/*Este codigo recorre cada una de las card del arrays y al presionar el botton agregar,
+agrega un evento, guarda los datos en el localstorage y los muestra en el dom.*/
 depositoUno.forEach((producto,indice) =>{
     document.getElementById(`producto${indice}`).children[1].children[4].addEventListener(`click`,()=>{
 
+        //muestra una alerta al presionar el boton agregar carrito.
         Toastify({
             text: "Producto agregado al carrito",
             duration: 5000,
@@ -65,33 +71,34 @@ depositoUno.forEach((producto,indice) =>{
             onClick: function(){} // Callback after click
         }).showToast();
 
-        const agregados = new Herramientas(producto.nombre,producto.marca,producto.detalle,producto.precio,producto.img);
+        //agarra los datos del producto y los almacena en una nueva arrays.
+        const agregados = new Herramientas(producto.stock,producto.nombre,producto.precio,producto.img);
         changito.push(agregados);
         //guardo los datos en el localstorage
         localStorage.setItem("changito",JSON.stringify(changito));
-        //pido los datos del localstorage,pero no me las da
-        const pedirDatos = JSON.parse(localStorage.getItem(changito));
-        console.log(pedirDatos);//los datos me salen null.
 
-        //este codigo hace que los datos guardados lo muestro en el dom,pero no me los da.
-        pedirDatos.forEach(guardado =>{
-            cajaCompra.innerHTML += `
-            <div class="card">
-                <div class="card-header">
-                    ${guardado.precio}
+        botonVerCarrito.addEventListener(`click`,()=>{
+            //pido los datos del localstorage,
+            const pedirDatos = JSON.parse(localStorage.getItem("changito"));
+            //los muestra en el DOM.
+            pedirDatos.forEach((guardado,indice) =>{
+                conteinerChanguito.innerHTML += `
+                <div class="card" id="numero${indice}>
+                    <div class="card-header">
+                        ${guardado.precio}
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">${guardado.marca}</h5>
+                        <p class="card-text">${guardado.detalle}</p>
+                        <a href="#" class="btn btn-primary">comprar</a>
+                    </div>
                 </div>
-                <div class="card-body">
-                    <h5 class="card-title">${guardado.marca}</h5>
-                    <p class="card-text">${guardado.detalle}</p>
-                    <a href="#" class="btn btn-primary">comprar</a>
-                </div>
-            </div>
-            `
-        })
+                `
+            });
+        });
+    
     });
-})
-
-
+});
 
 //Este codigo nos permite ingresar productos desde javaScript y visualizarlo en el DOM.
 class Hogar{
@@ -145,28 +152,7 @@ Plomeria.forEach((productos,numero)=>{
                 background: "linear-gradient(to right, #F16529, #E44D26)",
             },
             onClick: function(){} // Callback after click
-        }).showToast();
+        }).showToast();        
     });
 });
 
-/*
-
-btnAgregar.addEventListener(`click`,()=>{
-    Toastify({
-        text: "This is a toast",
-        duration: 3000,
-        destination: "https://github.com/apvarun/toastify-js",
-        newWindow: true,
-        close: true,
-        gravity: "top", // `top` or `bottom`
-        position: "left", // `left`, `center` or `right`
-        stopOnFocus: true, // Prevents dismissing of toast on hover
-        style: {
-        background: "linear-gradient(to right, #00b09b, #96c93d)",
-        },
-        onClick: function(){} // Callback after click
-    }).showToast();
-})
-
-
-*/
