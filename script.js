@@ -45,12 +45,12 @@ depositoUno.forEach((cosas,indice) =>{
 const conteinerChanguito = document.getElementById("conteiner-changuito");
 const botonVerCarrito = document.getElementById("boton-ver-carrito");
 const changito = [];
-/*
+
 if (localStorage.getItem("changito")) {
     JSON.parse(localStorage.getItem("changito"));
 }else{
     localStorage.setItem("changito",JSON.stringify("changito"))
-}*/
+}
 
 /*Este codigo recorre cada una de las card del arrays y al presionar el botton agregar,
 agrega un evento, guarda los datos en el localstorage y los muestra en el dom.*/
@@ -76,27 +76,27 @@ depositoUno.forEach((producto,indice) =>{
         changito.push(agregados);
         //guardo los datos en el localstorage
         localStorage.setItem("changito",JSON.stringify(changito));
+    });
+});
 
-        botonVerCarrito.addEventListener(`click`,()=>{
-            //pido los datos del localstorage,
-            const pedirDatos = JSON.parse(localStorage.getItem("changito"));
-            //los muestra en el DOM.
-            pedirDatos.forEach((guardado,indice) =>{
-                conteinerChanguito.innerHTML += `
-                <div class="card" id="numero${indice}>
-                    <div class="card-header">
-                        ${guardado.precio}
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">${guardado.marca}</h5>
-                        <p class="card-text">${guardado.detalle}</p>
-                        <a href="#" class="btn btn-primary">comprar</a>
-                    </div>
-                </div>
-                `
-            });
-        });
-    
+//pido los datos del localstorage,
+const pedirDatos = JSON.parse(localStorage.getItem("changito"));
+
+botonVerCarrito.addEventListener(`click`,()=>{
+    //los muestra en el DOM.
+    pedirDatos.forEach((guardado,indice) =>{
+        conteinerChanguito.innerHTML += `
+        <div class="card" id="numero${indice}>
+            <div class="card-header">
+                ${guardado.precio}
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">${guardado.marca}</h5>
+                <p class="card-text">${guardado.detalle}</p>
+                <a href="#" class="btn btn-primary">comprar</a>
+            </div>
+        </div>
+        `
     });
 });
 
