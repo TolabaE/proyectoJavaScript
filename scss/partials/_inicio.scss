@@ -7,7 +7,7 @@
         margin-top: 5px;
     }
     .seccion-uno{
-        padding: 10px;
+        padding: 0px 10px 10px 10px;
 
         #cajaUno{
             display: flex;
@@ -25,38 +25,9 @@
                     background-color: $paleta-color2;
                     border: 2px solid $paleta-color4;
                     margin: 5px;
-
-                    .card-img-top{
-                        width: 172px;
-                        height: 140px;
+                    &.card:hover{
+                        box-shadow: 0px 0px 8px 5px rgb(112, 199, 214);
                     }
-
-                    button{
-                        margin-left: 25px;
-                    }
-                }    
-            }
-        }
-    }
-    .seccion-dos{
-        padding: 10px;
-
-        #cajaDos{
-            display: flex;
-            flex-wrap: wrap;
-            align-content: stretch;
-
-            .boxDos{
-                margin: auto;
-                margin-top: 10px;
-
-                .card{
-                    width: 11rem;
-                    height: 24rem;
-                    color: black;
-                    background-color: $paleta-color2;
-                    border: 2px solid $paleta-color4;
-                    margin: 5px;
 
                     .card-img-top{
                         width: 172px;
@@ -85,7 +56,7 @@
 @media (min-width:768px){
 
     .seccion-uno{
-        padding: 20px;
+        padding: 0px 20px 20px 20px;
 
         #cajaUno{
             display: flex;
@@ -116,38 +87,7 @@
             }
         }
     }
-    .seccion-dos{
-        padding: 20px;
-
-        #cajaDos{
-            display: flex;
-            flex-wrap: wrap;
-            align-content: stretch;
-            padding: 20px;
-
-            .boxDos{
-                padding: 10px;
-                margin: auto;
-                .card{
-                    width:16rem;
-                    height: 30rem;
-                    color: black;
-                    background-color: $paleta-color2;
-                    border: 2px solid $paleta-color4;
-                    margin: 10px;
-
-                    button{
-                        margin-left: 30%;
-                    }
-                    .card-img-top{
-                        width: 252px;
-                        height: 240px;
-                    }
-                }    
-            }
-        }
-    }
-
+    
     .contenedor-form{
 
         .caja-form{

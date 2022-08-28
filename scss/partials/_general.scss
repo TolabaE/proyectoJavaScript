@@ -43,12 +43,12 @@ body{
                         .imgNav{
                             width: 35px;
                         }
+                        .btn{
+                            margin-top: 8px;
+                            background-color: $paleta-color1;
+                        }   
                     }
-                }
-                .btn{
-                    color: white;
-                    background-color: $paleta-color4;
-                }    
+                } 
             }
         }
     }
@@ -63,7 +63,4 @@ body{
         text-align: center;
         padding: 5px;
     }
-}
-@media (min-width:768px){
-    
 }

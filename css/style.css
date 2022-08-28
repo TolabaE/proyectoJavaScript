@@ -31,9 +31,9 @@ body {
           font-size: x-large; }
         .contenedor-navbar .navbar-color div ul li .imgNav {
           width: 35px; }
-    .contenedor-navbar .navbar-color div .btn {
-      color: white;
-      background-color: #03045e; }
+        .contenedor-navbar .navbar-color div ul li .btn {
+          margin-top: 8px;
+          background-color: #0077b6; }
   .tituloDiv {
     background-color: #5fa8d3;
     padding: 20px 0px;
@@ -51,7 +51,7 @@ body {
     text-align: center;
     margin-top: 5px; }
   .seccion-uno {
-    padding: 10px; }
+    padding: 0px 10px 10px 10px; }
     .seccion-uno #cajaUno {
       display: flex;
       flex-wrap: wrap;
@@ -66,31 +66,12 @@ body {
           background-color: #3d8ef8;
           border: 2px solid #03045e;
           margin: 5px; }
+          .seccion-uno #cajaUno .boxJs .card.card:hover {
+            box-shadow: 0px 0px 8px 5px #70c7d6; }
           .seccion-uno #cajaUno .boxJs .card .card-img-top {
             width: 172px;
             height: 140px; }
           .seccion-uno #cajaUno .boxJs .card button {
-            margin-left: 25px; }
-  .seccion-dos {
-    padding: 10px; }
-    .seccion-dos #cajaDos {
-      display: flex;
-      flex-wrap: wrap;
-      align-content: stretch; }
-      .seccion-dos #cajaDos .boxDos {
-        margin: auto;
-        margin-top: 10px; }
-        .seccion-dos #cajaDos .boxDos .card {
-          width: 11rem;
-          height: 24rem;
-          color: black;
-          background-color: #3d8ef8;
-          border: 2px solid #03045e;
-          margin: 5px; }
-          .seccion-dos #cajaDos .boxDos .card .card-img-top {
-            width: 172px;
-            height: 140px; }
-          .seccion-dos #cajaDos .boxDos .card button {
             margin-left: 25px; }
   .contenedor-form .caja-form {
     background-color: #3d8ef8;
@@ -101,7 +82,7 @@ body {
 
 @media (min-width: 768px) {
   .seccion-uno {
-    padding: 20px; }
+    padding: 0px 20px 20px 20px; }
     .seccion-uno #cajaUno {
       display: flex;
       flex-wrap: wrap;
@@ -122,28 +103,6 @@ body {
           .seccion-uno #cajaUno .boxJs .card .card-img-top {
             width: 252px;
             height: 240px; }
-  .seccion-dos {
-    padding: 20px; }
-    .seccion-dos #cajaDos {
-      display: flex;
-      flex-wrap: wrap;
-      align-content: stretch;
-      padding: 20px; }
-      .seccion-dos #cajaDos .boxDos {
-        padding: 10px;
-        margin: auto; }
-        .seccion-dos #cajaDos .boxDos .card {
-          width: 16rem;
-          height: 30rem;
-          color: black;
-          background-color: #3d8ef8;
-          border: 2px solid #03045e;
-          margin: 10px; }
-          .seccion-dos #cajaDos .boxDos .card button {
-            margin-left: 30%; }
-          .seccion-dos #cajaDos .boxDos .card .card-img-top {
-            width: 252px;
-            height: 240px; }
   .contenedor-form .caja-form {
     background-color: #3d8ef8;
     padding: 20px;
@@ -159,8 +118,6 @@ body {
     text-align: center;
     background-color: #5fa8d3;
     padding: 10px; }
-  .contenedor-carrito-btn .btn-dos {
-    margin-left: 10px;
-    margin-top: 10px; }
   .caja-box-changuito {
-    background-color: chocolate; } }
+    background-color: #3d8ef8;
+    color: black; } }

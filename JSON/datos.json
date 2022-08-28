@@ -1,0 +1,135 @@
+[
+    {
+        "nombre": "Pico",
+        "marca": "Gherardi",
+        "stock": 12,
+        "precio": 8000,
+        "img":"https://image.made-in-china.com/155f0j00ZpOUTDfKbykH/Agriculture-Tool-Steel-Mattock-Head-P404-Pickaxe.jpg"
+    },
+    {
+        "nombre":"Pala",
+        "marca":"Gherardi",
+        "stock":15,
+        "precio":7500,
+        "img":"http://d3ugyf2ht6aenh.cloudfront.net/stores/001/127/623/products/894981-7acbaa455af52d1eeb16110644726447-640-0.jpg"
+    },
+    {
+        "nombre":"Machete",
+        "marca":"Bellota",
+        "stock":10,
+        "precio":3000,
+        "img":"https://www.gherardi.com.ar/wp-content/uploads/2018/01/Machete-2-270x395.jpg"
+    },
+    {
+        "nombre":"Hacha",
+        "marca": "Tramontina",
+        "stock": 12,
+        "precio": 2400,
+        "img":"https://www.bimat.com.ar/images/W-23181608126706830.jpg"
+    },
+    {
+        "nombre": "Fumigador",
+        "marca":"Jacto",
+        "stock":15,
+        "precio":15000,
+        "img":"https://m.media-amazon.com/images/I/412ZvrJIfRL._SL500_.jpg"
+    },
+    {
+        "nombre":"Asadon",
+        "marca":"Bellota",
+        "stock":12,
+        "precio":1300,
+        "img":"https://img.agriexpo.online/es/images_ag/photo-mg/176021-15474954.webp"
+    },
+    {
+        "nombre":"Botas",
+        "marca":"Pampero",
+        "stock":15,
+        "precio":2900,
+        "img":"https://image.made-in-china.com/202f0j10dnSQjRHsyqoB/High-Quality-Working-Industrial-Labor-Safety-PVC-Gum-Rain-Boots.jpg"
+    },
+    {
+        "nombre":"Horquilla",
+        "marca":"Tramontina",
+        "stock":10,
+        "precio":2350,
+        "img":"https://www.fielex.com.uy/content/images/thumbs/0080895_horquilla-cmango-120cm-4-dientes-tramontina_600.jpeg"
+    },
+    {
+        "nombre":"Rastrillo",
+        "marca":"Gherardi",
+        "stock":20,
+        "precio":1450,
+        "img":"http://www.chayto.com.ar/fotos/rastrillo-chayto.jpg"
+    },
+    {
+        "nombre":"Carretilla",
+        "marca":"Baldan",
+        "stock":8,
+        "precio":25000,
+        "img":"https://arcencohogar.vtexassets.com/arquivos/ids/269801/1002766.jpg?v=637651551889900000"
+    },
+    {
+        "nombre":"Motoguadaña",
+        "marca":"Stihl FS 420",
+        "stock":12,
+        "precio":55000,
+        "img":"https://nogalpark.com/archivos/recortes/motoguadana-stihl-fs-450-nogalpark.jpg"
+    },
+    {
+        "nombre":"Tenaza",
+        "marca":"Gherardi",
+        "stock":15,
+        "precio":3170,
+        "img":"http://www.sidercon.com/imagenes/8201-572-tenaza-carpintero-200mm-bahco-541-d-200a.jpg"
+    },
+    {
+        "nombre":"Pinza",
+        "marca":"Gherardi",
+        "stock":12,
+        "precio":1250,
+        "img":"https://www.martinezescalada.com.ar/551-extra_large_default/pinza-universal-992801-7.jpg"
+    },
+    {
+        "nombre":"Plomada Albañil",
+        "marca":"Toth",
+        "stock":10,
+        "precio":900,
+        "img":"https://www.hierrosmaldonado.com.ar/1557-large_default/plomada-400-gr.jpg"
+    },
+    {
+        "nombre":"Balde",
+        "marca":"Plastic",
+        "stock":15,
+        "precio":2100,
+        "img":"https://www.pronor.com.ar/images/PM-BALCHP1599587895908.jpg"
+    },
+    {
+        "nombre":"Nivel",
+        "marca":"Bellota",
+        "stock":20,
+        "precio":850,
+        "img":"https://es.cornilleau.com/4773-large_default/nivel-de-burbuja.jpg"
+    },
+    {
+        "nombre":"Martillo",
+        "marca":"Masa",
+        "stock":10,
+        "precio":1250,
+        "img":"https://assets.tramontina.com.br/upload/tramon/imagens/GAR/40682008PDM001G.jpg"
+    },
+    {
+        "nombre":"Tanza",
+        "marca":"Grilon",
+        "stock":10,
+        "precio":300,
+        "img":"https://www.pronor.com.ar/images/00000000RC-7553699874RC-75536.jpg"
+    },
+    {
+        "nombre":"Cuchara",
+        "marca":"Gherardi",
+        "stock":12,
+        "precio":650,
+        "img":"https://arcencohogar.vtexassets.com/arquivos/ids/300009-800-800?v=637665764479800000&width=800&height=800&aspect=true"
+    }
+]
