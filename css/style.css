@@ -119,5 +119,9 @@ body {
     background-color: #5fa8d3;
     padding: 10px; }
   .caja-box-changuito {
-    background-color: #3d8ef8;
-    color: black; } }
+    background-color: #caf0f8;
+    color: black;
+    position: absolute;
+    z-index: 1; }
+  .table {
+    color: #03045e; } }

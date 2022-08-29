@@ -60,10 +60,10 @@ fetch(`./JSON/datos.json`)
 const pedirDatos = JSON.parse(localStorage.getItem("changito"));
 
 botonVerCarrito.addEventListener(`click`,()=>{
-    //los muestra en el DOM.
-    pedirDatos.forEach((guardado,indice,id) =>{
+    //muestra en el DOM los productos agregados al carrito.
+    pedirDatos.forEach((guardado,index) =>{
         conteinerChanguito.innerHTML += `
-        <div class="cardHijo" id="producto${id}">
+        <div class="cardHijo" id="producto${index}">
             <thead> 
                 <tr>
                     <th scope="col">Orden de compra</th>
@@ -75,7 +75,7 @@ botonVerCarrito.addEventListener(`click`,()=>{
             </thead>
             <tbody>
                 <tr>
-                    <th scope="row">  N° ${indice}</th>
+                    <th scope="row">  N° </th>
                     <td><img style="max-width: 50px;" src="${guardado.img}"  alt=""></td>
                     <td>${guardado.nombre}</td>
                     <td>$${guardado.precio}</td>
@@ -85,5 +85,12 @@ botonVerCarrito.addEventListener(`click`,()=>{
         </div>
         `
     });
-
+    /*
+    //este codigo permite comprar productos del carrito 
+    pedirDatos.forEach((producto,index)=>{
+        document.getElementById(`producto${index}`).children[1].children[0].children[4].addEventListener(`click`,()=>{
+            document.getElementById(`producto${index}`.remove());
+        });
+    });*/
 });
+
