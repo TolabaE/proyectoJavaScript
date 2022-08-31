@@ -10,13 +10,8 @@ class Datos{
     }
 }
 
-const consultas = [];
-/*
-if (localStorage.getItem("consultas")) {
-    JSON.parse(localStorage.getItem("consultas"));
-} else {
-    localStorage.setItem("consultas",JSON.stringify(consultas));
-}*/
+//consulto los datos del localstorage,si encuentra devuelvos esos datos,sino devuelve una array vacio.
+const consultas =JSON.parse(localStorage.getItem('consultas'))??[];
 
 const formContacto = document.getElementById("cajaForm");
 const button = document.getElementById("btnPedir");

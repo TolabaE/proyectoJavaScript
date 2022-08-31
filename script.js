@@ -2,12 +2,7 @@ const conteiner = document.getElementById("cajaUno");
 const conteinerChanguito = document.getElementById("conteiner-changuito");
 const botonVerCarrito = document.getElementById("boton-ver-carrito");
 
-const changito = [];
-if (localStorage.getItem("changito")) {
-    JSON.parse(localStorage.getItem("changito"));
-}else{
-    localStorage.setItem("changito",JSON.stringify("changito"))
-};
+const changito = JSON.parse(localStorage.getItem('changito'))??[];
 
 fetch(`./JSON/datos.json`)
 .then(response => response.json())
@@ -58,39 +53,47 @@ fetch(`./JSON/datos.json`)
 
 //pido los datos del localstorage,
 const pedirDatos = JSON.parse(localStorage.getItem("changito"));
-
 botonVerCarrito.addEventListener(`click`,()=>{
     //muestra en el DOM los productos agregados al carrito.
-    pedirDatos.forEach((guardado,index) =>{
-        conteinerChanguito.innerHTML += `
-        <div class="cardHijo" id="producto${index}">
-            <thead> 
-                <tr>
-                    <th scope="col">Orden de compra</th>
-                    <th scope="col">imagen</th>
-                    <th scope="col">nombre</th>
-                    <th scope="col">precio</th>
-                    <th scope="col">pago</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">  N° </th>
-                    <td><img style="max-width: 50px;" src="${guardado.img}"  alt=""></td>
-                    <td>${guardado.nombre}</td>
-                    <td>$${guardado.precio}</td>
-                    <td><button class="btn btn-info">comprar</button></td>
-                </tr>
-            </tbody>   
-        </div>
-        `
-    });
-    /*
-    //este codigo permite comprar productos del carrito 
-    pedirDatos.forEach((producto,index)=>{
-        document.getElementById(`producto${index}`).children[1].children[0].children[4].addEventListener(`click`,()=>{
-            document.getElementById(`producto${index}`.remove());
+        pedirDatos.forEach((guardado,index) =>{
+            conteinerChanguito.innerHTML += `
+            <div class="card text-dark bg-primary mb-3" style="max-width:450px;" id="producto${index}" >
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="${guardado.img}" class="img-fluid rounded-start" alt="">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">producto: ${guardado.nombre}</h5>
+                            <p class="card-text">$ ${guardado.precio}</p>
+                            <button class="btn btn-info">comprar</button>
+                            <button class="btn btn-danger">eliminar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            `
         });
-    });*/
+        
+        //este codigo permite comprar productos del carrito 
+        pedirDatos.forEach((producto,index)=>{
+            document.getElementById(`producto${index}`).children[0].children[1].children[0].children[2].addEventListener(`click`,()=>{
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: 'Compra realizada',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+                document.getElementById(`producto${index}`).remove();
+                changito.splice(index,1);
+                localStorage.setItem("changito",JSON.stringify(changito));
+            })
+            document.getElementById(`producto${index}`).children[0].children[1].children[0].children[3].addEventListener(`click`,()=>{
+                document.getElementById(`producto${index}`).remove();
+                changito.splice(index,1);
+                localStorage.setItem("changito",JSON.stringify(changito));
+            })
+        });
+    
 });
-

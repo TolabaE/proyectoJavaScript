@@ -120,8 +120,7 @@ body {
     padding: 10px; }
   .caja-box-changuito {
     background-color: #caf0f8;
-    color: black;
+    margin-left: 20px;
+    padding: 10px;
     position: absolute;
-    z-index: 1; }
-  .table {
-    color: #03045e; } }
+    z-index: 1; } }

@@ -7,11 +7,10 @@
     }
     .caja-box-changuito{
         background-color: $paleta-color5;
-        color: black;
+        margin-left: 20px;
+        padding: 10px;
         position: absolute;
-        z-index:1;
-    }
-    .table{
-        color:$paleta-color4;
+        z-index: 1;
+        
     }
 }
