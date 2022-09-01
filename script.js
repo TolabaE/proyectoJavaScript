@@ -95,5 +95,5 @@ botonVerCarrito.addEventListener(`click`,()=>{
                 localStorage.setItem("changito",JSON.stringify(changito));
             })
         });
-    
+s
 });
