@@ -4,6 +4,12 @@ const botonVerCarrito = document.getElementById("boton-ver-carrito");
 
 const changito = JSON.parse(localStorage.getItem('changito'))??[];
 
+async function arrayProductos () {
+    const traer = await fetch(`./JSON/datos.json`)
+    const consulta = await traer.json()
+    return consulta;
+}
+
 fetch(`./JSON/datos.json`)
 .then(response => response.json())
 .then (datos =>{
@@ -42,10 +48,14 @@ fetch(`./JSON/datos.json`)
                 },
                 onClick: function(){} // Callback after click
             }).showToast();
-    
-            //agarra los datos del producto y los almacena en una nueva arrays.
-            changito.push(producto);
-            //guardo los datos en el localstorage
+            //este codigo permite ver,si el producto agregado existe agrego la cantidad en 1,sino lo crea.
+            if(changito.find(elem=>elem.id ==producto.id)){
+                changito[indice].cantidad++
+            }else{
+                const agregadoChangito = {id: producto.id,cantidad:1};
+                changito.push(agregadoChangito);
+            }
+            //guardo los datos en el array del localstorage
             localStorage.setItem("changito",JSON.stringify(changito));
         });
     });  
@@ -53,19 +63,22 @@ fetch(`./JSON/datos.json`)
 
 //pido los datos del localstorage,
 const pedirDatos = JSON.parse(localStorage.getItem("changito"));
-botonVerCarrito.addEventListener(`click`,()=>{
+botonVerCarrito.addEventListener(`click`,async ()=>{
+
+    const datosArray = await arrayProductos();
     //muestra en el DOM los productos agregados al carrito.
-        pedirDatos.forEach((guardado,index) =>{
+    pedirDatos.forEach((guardado,index) =>{
             conteinerChanguito.innerHTML += `
             <div class="card text-dark bg-primary mb-3" style="max-width:450px;" id="producto${index}" >
                 <div class="row g-0">
                     <div class="col-md-4">
-                        <img src="${guardado.img}" class="img-fluid rounded-start" alt="">
+                        <img src="${datosArray.img}" class="img-fluid rounded-start" alt="">
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
                             <h5 class="card-title">producto: ${guardado.nombre}</h5>
                             <p class="card-text">$ ${guardado.precio}</p>
+                            <p class="card-text">$ ${guardado.id}</p>
                             <button class="btn btn-info">comprar</button>
                             <button class="btn btn-danger">eliminar</button>
                         </div>
@@ -73,10 +86,10 @@ botonVerCarrito.addEventListener(`click`,()=>{
                 </div>
             </div>
             `
-        });
+    });
         
         //este codigo permite comprar productos del carrito 
-        pedirDatos.forEach((producto,index)=>{
+    pedirDatos.forEach((producto,index)=>{
             document.getElementById(`producto${index}`).children[0].children[1].children[0].children[2].addEventListener(`click`,()=>{
                 Swal.fire({
                     position: 'center',
@@ -94,6 +107,6 @@ botonVerCarrito.addEventListener(`click`,()=>{
                 changito.splice(index,1);
                 localStorage.setItem("changito",JSON.stringify(changito));
             })
-        });
-s
+    });
+
 });
