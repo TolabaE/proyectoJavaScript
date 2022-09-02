@@ -54,7 +54,17 @@ fetch(`./JSON/datos.json`)
 //pido los datos del localstorage,
 const pedirDatos = JSON.parse(localStorage.getItem("changito"));
 botonVerCarrito.addEventListener(`click`,()=>{
-    //muestra en el DOM los productos agregados al carrito.
+    if(pedirDatos.length == 0){
+        Swal.fire({
+            title: 'carrito vacio',
+            text: 'no tenes productos agregados..¡segui comprando!',
+            imageUrl: 'https://s3-vultec-pe.s3-us-west-2.amazonaws.com/media/uploads/froala_editor/images/carritovacio.png',
+            imageWidth: 400,
+            imageHeight: 300,
+            imageAlt: 'Custom image',
+        })
+    }else{
+        //muestra en el DOM los productos agregados al carrito.
         pedirDatos.forEach((guardado,index) =>{
             conteinerChanguito.innerHTML += `
             <div class="card text-dark bg-primary mb-3" style="max-width:450px;" id="producto${index}" >
@@ -84,7 +94,7 @@ botonVerCarrito.addEventListener(`click`,()=>{
                     title: 'Compra realizada',
                     showConfirmButton: false,
                     timer: 1500
-                })
+                });
                 document.getElementById(`producto${index}`).remove();
                 changito.splice(index,1);
                 localStorage.setItem("changito",JSON.stringify(changito));
@@ -93,7 +103,7 @@ botonVerCarrito.addEventListener(`click`,()=>{
                 document.getElementById(`producto${index}`).remove();
                 changito.splice(index,1);
                 localStorage.setItem("changito",JSON.stringify(changito));
-            })
+            });
         });
-s
+    };
 });
