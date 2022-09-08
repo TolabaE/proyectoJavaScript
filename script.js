@@ -1,7 +1,11 @@
 const conteiner = document.getElementById("cajaUno");
 const conteinerChanguito = document.getElementById("conteiner-changuito");
 const botonVerCarrito = document.getElementById("boton-ver-carrito");
+<<<<<<< HEAD
 const elTotal = document.getElementById("precioTotal");
+=======
+const cajaTotal = document.getElementById("box-total");
+>>>>>>> rama
 
 const changito = JSON.parse(localStorage.getItem('changito'))??[];
 
@@ -62,6 +66,7 @@ fetch(`./JSON/datos.json`)
     });  
 });
 
+<<<<<<< HEAD
 //funcion eliminar los productos del carrito
 function deleteProduct (){
     document.getElementById(`producto${index}`).remove();
@@ -70,6 +75,12 @@ function deleteProduct (){
 }
 
 let precioTotal = 0;
+=======
+
+//creo un let y que su valor inicial sea 0;
+let sumaTotal = 0;
+
+>>>>>>> rama
 //pido los datos del localstorage,
 const pedirDatos = JSON.parse(localStorage.getItem("changito"));
 <<<<<<< HEAD
@@ -84,6 +95,19 @@ botonVerCarrito.addEventListener(`click`,()=>{
             imageAlt: 'Custom image',
         })
     }else{
+        //este lo que hace es sumar el total de los precios y mostrarlo en el dom.
+        pedirDatos.forEach(cant =>{
+            cajaTotal.innerHTML = `
+            <div id="box-suma-children">
+                Precio Total es:$${sumaTotal+= cant.precio}
+            </div>
+            <button class="btn btn-danger" id="vaciar-carro">Vaciar carrito</button>
+            `
+            document.getElementById("vaciar-carro").addEventListener(`click`,()=>{
+                console.log("vaciar carrito")
+            })
+        })
+
         //muestra en el DOM los productos agregados al carrito.
         pedirDatos.forEach((guardado,index) =>{
 =======
