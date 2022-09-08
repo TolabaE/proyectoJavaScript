@@ -67,7 +67,7 @@ body {
           border: 2px solid #03045e;
           margin: 5px; }
           .seccion-uno #cajaUno .boxJs .card.card:hover {
-            box-shadow: 0px 0px 8px 5px #70c7d6; }
+            box-shadow: 0px 0px 8px 10px #70c7d6; }
           .seccion-uno #cajaUno .boxJs .card .card-img-top {
             width: 172px;
             height: 140px; }
