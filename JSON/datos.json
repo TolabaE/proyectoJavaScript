@@ -1,5 +1,6 @@
 [
     {
+        "id":1,
         "nombre": "Pico",
         "marca": "Gherardi",
         "stock": 12,
@@ -7,6 +8,7 @@
         "img":"https://image.made-in-china.com/155f0j00ZpOUTDfKbykH/Agriculture-Tool-Steel-Mattock-Head-P404-Pickaxe.jpg"
     },
     {
+        "id":2,
         "nombre":"Pala",
         "marca":"Gherardi",
         "stock":15,
@@ -14,6 +16,7 @@
         "img":"http://d3ugyf2ht6aenh.cloudfront.net/stores/001/127/623/products/894981-7acbaa455af52d1eeb16110644726447-640-0.jpg"
     },
     {
+        "id":3,
         "nombre":"Machete",
         "marca":"Bellota",
         "stock":10,
@@ -21,6 +24,7 @@
         "img":"https://www.gherardi.com.ar/wp-content/uploads/2018/01/Machete-2-270x395.jpg"
     },
     {
+        "id":4,
         "nombre":"Hacha",
         "marca": "Tramontina",
         "stock": 12,
@@ -28,6 +32,7 @@
         "img":"https://www.bimat.com.ar/images/W-23181608126706830.jpg"
     },
     {
+        "id":5,
         "nombre": "Fumigador",
         "marca":"Jacto",
         "stock":15,
@@ -35,6 +40,7 @@
         "img":"https://m.media-amazon.com/images/I/412ZvrJIfRL._SL500_.jpg"
     },
     {
+        "id":6,
         "nombre":"Asadon",
         "marca":"Bellota",
         "stock":12,
@@ -42,6 +48,7 @@
         "img":"https://img.agriexpo.online/es/images_ag/photo-mg/176021-15474954.webp"
     },
     {
+        "id":7,
         "nombre":"Botas",
         "marca":"Pampero",
         "stock":15,
@@ -49,6 +56,7 @@
         "img":"https://image.made-in-china.com/202f0j10dnSQjRHsyqoB/High-Quality-Working-Industrial-Labor-Safety-PVC-Gum-Rain-Boots.jpg"
     },
     {
+        "id":8,
         "nombre":"Horquilla",
         "marca":"Tramontina",
         "stock":10,
@@ -56,6 +64,7 @@
         "img":"https://www.fielex.com.uy/content/images/thumbs/0080895_horquilla-cmango-120cm-4-dientes-tramontina_600.jpeg"
     },
     {
+        "id":9,
         "nombre":"Rastrillo",
         "marca":"Gherardi",
         "stock":20,
@@ -63,6 +72,7 @@
         "img":"http://www.chayto.com.ar/fotos/rastrillo-chayto.jpg"
     },
     {
+        "id":10,
         "nombre":"Carretilla",
         "marca":"Baldan",
         "stock":8,
@@ -70,6 +80,7 @@
         "img":"https://arcencohogar.vtexassets.com/arquivos/ids/269801/1002766.jpg?v=637651551889900000"
     },
     {
+        "id":11,
         "nombre":"Motoguadaña",
         "marca":"Stihl FS 420",
         "stock":12,
@@ -77,6 +88,7 @@
         "img":"https://nogalpark.com/archivos/recortes/motoguadana-stihl-fs-450-nogalpark.jpg"
     },
     {
+        "id":12,
         "nombre":"Tenaza",
         "marca":"Gherardi",
         "stock":15,
@@ -84,6 +96,7 @@
         "img":"http://www.sidercon.com/imagenes/8201-572-tenaza-carpintero-200mm-bahco-541-d-200a.jpg"
     },
     {
+        "id":13,
         "nombre":"Pinza",
         "marca":"Gherardi",
         "stock":12,
@@ -91,6 +104,7 @@
         "img":"https://www.martinezescalada.com.ar/551-extra_large_default/pinza-universal-992801-7.jpg"
     },
     {
+        "id":14,
         "nombre":"Plomada Albañil",
         "marca":"Toth",
         "stock":10,
@@ -98,6 +112,7 @@
         "img":"https://www.hierrosmaldonado.com.ar/1557-large_default/plomada-400-gr.jpg"
     },
     {
+        "id":15,
         "nombre":"Balde",
         "marca":"Plastic",
         "stock":15,
@@ -105,6 +120,7 @@
         "img":"https://www.pronor.com.ar/images/PM-BALCHP1599587895908.jpg"
     },
     {
+        "id":16,
         "nombre":"Nivel",
         "marca":"Bellota",
         "stock":20,
@@ -112,6 +128,7 @@
         "img":"https://es.cornilleau.com/4773-large_default/nivel-de-burbuja.jpg"
     },
     {
+        "id":17,
         "nombre":"Martillo",
         "marca":"Masa",
         "stock":10,
@@ -119,6 +136,7 @@
         "img":"https://assets.tramontina.com.br/upload/tramon/imagens/GAR/40682008PDM001G.jpg"
     },
     {
+        "id":18,
         "nombre":"Tanza",
         "marca":"Grilon",
         "stock":10,
@@ -126,6 +144,7 @@
         "img":"https://www.pronor.com.ar/images/00000000RC-7553699874RC-75536.jpg"
     },
     {
+        "id":19,
         "nombre":"Cuchara",
         "marca":"Gherardi",
         "stock":12,
@@ -133,6 +152,7 @@
         "img":"https://arcencohogar.vtexassets.com/arquivos/ids/300009-800-800?v=637665764479800000&width=800&height=800&aspect=true"
     },
     {
+        "id":20,
         "nombre":"Moto Sierra",
         "marca":"Stihl MS 461",
         "stock":10,
