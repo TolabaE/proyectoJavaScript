@@ -1,6 +1,7 @@
 const conteiner = document.getElementById("cajaUno");
 const conteinerChanguito = document.getElementById("conteiner-changuito");
 const botonVerCarrito = document.getElementById("boton-ver-carrito");
+const cajaTotal = document.getElementById("box-total");
 
 const changito = JSON.parse(localStorage.getItem('changito'))??[];
 
@@ -51,6 +52,10 @@ fetch(`./JSON/datos.json`)
     });  
 });
 
+
+//creo un let y que su valor inicial sea 0;
+let sumaTotal = 0;
+
 //pido los datos del localstorage,
 const pedirDatos = JSON.parse(localStorage.getItem("changito"));
 botonVerCarrito.addEventListener(`click`,()=>{
@@ -64,6 +69,19 @@ botonVerCarrito.addEventListener(`click`,()=>{
             imageAlt: 'Custom image',
         })
     }else{
+        //este lo que hace es sumar el total de los precios y mostrarlo en el dom.
+        pedirDatos.forEach(cant =>{
+            cajaTotal.innerHTML = `
+            <div id="box-suma-children">
+                Precio Total es:$${sumaTotal+= cant.precio}
+            </div>
+            <button class="btn btn-danger" id="vaciar-carro">Vaciar carrito</button>
+            `
+            document.getElementById("vaciar-carro").addEventListener(`click`,()=>{
+                console.log("vaciar carrito")
+            })
+        })
+
         //muestra en el DOM los productos agregados al carrito.
         pedirDatos.forEach((guardado,index) =>{
             conteinerChanguito.innerHTML += `
