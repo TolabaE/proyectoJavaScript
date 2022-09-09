@@ -124,12 +124,8 @@ body {
     padding: 10px;
     position: absolute;
     z-index: 1; }
-    .caja-box-changuito .style-conteiner-suma {
-      display: flex;
-      justify-content: space-around;
-      font-weight: 600;
-      margin-bottom: 5px; }
-      .caja-box-changuito .style-conteiner-suma #box-suma-children {
-        color: #03045e;
-        margin-right: 10px;
-        font-size: x-large; } }
+    .caja-box-changuito .bg-primar {
+      color: #03045e;
+      text-align: center;
+      font-weight: 700;
+      font-size: xx-large; } }
