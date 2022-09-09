@@ -4,8 +4,7 @@ const botonVerCarrito = document.getElementById("boton-ver-carrito");
 
 const changito = JSON.parse(localStorage.getItem('changito')) ?? [];
 
-<<<<<<< HEAD
-=======
+
 async function arrayProductos() {
     const traer = await fetch(`./JSON/datos.json`)
     const consulta = await traer.json()
@@ -26,7 +25,7 @@ function actualizarPrecioTotal(datos, pedirDatos) {
     })
 }
 
->>>>>>> paralela
+
 fetch(`./JSON/datos.json`)
 .then(response => response.json())
 .then(datos => {
@@ -64,13 +63,12 @@ fetch(`./JSON/datos.json`)
                 },
                 onClick: function () {} // Callback after click
             }).showToast();
-<<<<<<< HEAD
-    
+
             //agarra los datos del producto y los almacena en una nueva arrays.
             changito.push(producto);
             //guardo los datos en el localstorage
             localStorage.setItem("changito",JSON.stringify(changito));
-=======
+
             //este codigo permite ver,si el producto agregado existe agrego la cantidad en 1,sino lo crea.
             if (changito.some(elem => elem.id === producto.id)) {
                 let objetoClickeado = changito.find(elem => elem.id === producto.id)
@@ -85,7 +83,7 @@ fetch(`./JSON/datos.json`)
             }
             //guardo los datos en el array del localstorage
             localStorage.setItem("changito", JSON.stringify(changito));
->>>>>>> paralela
+            paralela
         });
     });  
     
@@ -172,7 +170,7 @@ fetch(`./JSON/datos.json`)
     });
 });
 
-<<<<<<< HEAD
+
 //pido los datos del localstorage,
 const pedirDatos = JSON.parse(localStorage.getItem("changito"));
 botonVerCarrito.addEventListener(`click`,()=>{
@@ -229,11 +227,11 @@ botonVerCarrito.addEventListener(`click`,()=>{
         });
     };
 });
-=======
+
 //funcion eliminar los productos del carrito
 // function deleteProduct() {
 //     document.getElementById(`producto${index}`).remove();
 //     changito.splice(index, 1);
 //     localStorage.setItem("changito", JSON.stringify(changito));
 // }
->>>>>>> paralela
+
