@@ -3,6 +3,7 @@ const conteinerChanguito = document.getElementById("conteiner-changuito");
 const botonVerCarrito = document.getElementById("boton-ver-carrito");
 const elTotal = document.getElementById("precioTotal");
 
+//creo el localstorage con un array vacio.
 const changito = JSON.parse(localStorage.getItem('changito')) ?? [];
 
 async function arrayProductos() {
@@ -11,6 +12,7 @@ async function arrayProductos() {
     return consulta;
 }
 
+//esta funcion suma el total de los precios agregados al carrito y los pinta en el DOM.
 function actualizarPrecioTotal(datos, pedirDatos) {
     let precioTotal = 0;
     datos.forEach(cant => {
@@ -84,6 +86,7 @@ fetch(`./JSON/datos.json`)
         //pido los datos del localstorage,
         const changito = JSON.parse(localStorage.getItem("changito"));
 
+        //si existe productos en el array me devuelve,sino notificacion de carrrito vacio.
         if (changito.length == 0) {
             Swal.fire({
                 title: 'carrito vacio',
@@ -97,10 +100,7 @@ fetch(`./JSON/datos.json`)
 
         actualizarPrecioTotal(datos, changito)
 
-        //const suma = (pedirDatos.precio*pedirDatos.cantidad)
-        //const datosArray = await arrayProductos();
-        //muestra en el DOM los productos agregados al carrito.
-        //conteinerChanguito = ""
+        //compara los datos del localstorage con el los del json si lo encuentra me devuelve los datos y los pinta en el html.
         datos.forEach((guardado, index) => {
             if (changito.some(elem => elem.id === guardado.id)) {
                 let objetoExtraido = changito.find(elem => elem.id == guardado.id)
@@ -128,14 +128,18 @@ fetch(`./JSON/datos.json`)
                 //este codigo permite comprar productos del carrito 
         datos.forEach( (guardado) => {
             if (changito.some(elem => elem.id === guardado.id)) {
+                //evento de tipo click,que elimina los productos agregados al carrito.
+
+                //elimina los productos del array,al hacer click al boton comprar.
                 document.getElementById(`producto${guardado.id}`).children[0].children[1].children[0].children[3].addEventListener(`click`, () => {
                     Swal.fire({
                         position: 'center',
                         icon: 'success',
-                        title: 'Compra realizada',
+                        title: 'Compra Finalizada',
                         showConfirmButton: false,
                         timer: 1500
                     })
+                    
                     document.getElementById(`producto${guardado.id}`).remove();
                     
                     let objetoEncontrado = changito.find(elem => elem.id == guardado.id)
@@ -145,7 +149,8 @@ fetch(`./JSON/datos.json`)
                     actualizarPrecioTotal(datos, changito)
 
                 });
-            
+                
+                //elimina del carrito los elementos eliminados
                 document.getElementById(`producto${guardado.id}`).children[0].children[1].children[0].children[4].addEventListener(`click`, () => {
                     document.getElementById(`producto${guardado.id}`).remove();
 
@@ -154,10 +159,8 @@ fetch(`./JSON/datos.json`)
                     localStorage.setItem("changito", JSON.stringify(changito));
 
                     actualizarPrecioTotal(datos, changito)
-
-                })
+                });
             }
         });
-        
     });
 });
