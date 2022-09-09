@@ -123,4 +123,9 @@ body {
     margin-left: 20px;
     padding: 10px;
     position: absolute;
-    z-index: 1; } }
+    z-index: 1; }
+    .caja-box-changuito .bg-primar {
+      color: #03045e;
+      text-align: center;
+      font-weight: 700;
+      font-size: xx-large; } }

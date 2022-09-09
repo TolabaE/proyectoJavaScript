@@ -11,6 +11,11 @@
         padding: 10px;
         position: absolute;
         z-index: 1;
-        
+        .bg-primar{
+            color: $paleta-color4;
+            text-align: center;
+            font-weight: 700;
+            font-size: xx-large;
+        }
     }
 }
