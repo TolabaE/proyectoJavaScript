@@ -1,9 +1,9 @@
 const conteiner = document.getElementById("cajaUno");
 const conteinerChanguito = document.getElementById("conteiner-changuito");
 const botonVerCarrito = document.getElementById("boton-ver-carrito");
+const elTotal = document.getElementById("precioTotal");
 
 const changito = JSON.parse(localStorage.getItem('changito')) ?? [];
-
 
 async function arrayProductos() {
     const traer = await fetch(`./JSON/datos.json`)
@@ -24,7 +24,6 @@ function actualizarPrecioTotal(datos, pedirDatos) {
         }
     })
 }
-
 
 fetch(`./JSON/datos.json`)
 .then(response => response.json())
@@ -53,7 +52,7 @@ fetch(`./JSON/datos.json`)
             //muestra una alerta al presionar el boton agregar carrito.
             Toastify({
                 text: "Producto agregado al carrito",
-                duration: 5000,
+                duration: 3000,
                 close: true,
                 gravity: "bottom", // `top` or `bottom`
                 position: "right", // `left`, `center` or `right`
@@ -63,12 +62,6 @@ fetch(`./JSON/datos.json`)
                 },
                 onClick: function () {} // Callback after click
             }).showToast();
-
-            //agarra los datos del producto y los almacena en una nueva arrays.
-            changito.push(producto);
-            //guardo los datos en el localstorage
-            localStorage.setItem("changito",JSON.stringify(changito));
-
             //este codigo permite ver,si el producto agregado existe agrego la cantidad en 1,sino lo crea.
             if (changito.some(elem => elem.id === producto.id)) {
                 let objetoClickeado = changito.find(elem => elem.id === producto.id)
@@ -83,7 +76,6 @@ fetch(`./JSON/datos.json`)
             }
             //guardo los datos en el array del localstorage
             localStorage.setItem("changito", JSON.stringify(changito));
-            paralela
         });
     });  
     
@@ -169,69 +161,3 @@ fetch(`./JSON/datos.json`)
         
     });
 });
-
-
-//pido los datos del localstorage,
-const pedirDatos = JSON.parse(localStorage.getItem("changito"));
-botonVerCarrito.addEventListener(`click`,()=>{
-    if(pedirDatos.length == 0){
-        Swal.fire({
-            title: 'carrito vacio',
-            text: 'no tenes productos agregados..¡segui comprando!',
-            imageUrl: 'https://s3-vultec-pe.s3-us-west-2.amazonaws.com/media/uploads/froala_editor/images/carritovacio.png',
-            imageWidth: 400,
-            imageHeight: 300,
-            imageAlt: 'Custom image',
-        });
-    }else{
-        //muestra en el DOM los productos agregados al carrito.
-        pedirDatos.forEach((guardado,index) =>{
-            conteinerChanguito.innerHTML += `
-            <div class="card text-dark bg-primary mb-3" style="max-width:450px;" id="producto${index}" >
-                <div class="row g-0">
-                    <div class="col-md-4">
-                        <img src="${guardado.img}" class="img-fluid rounded-start" alt="">
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title">producto: ${guardado.nombre}</h5>
-                            <p class="card-text">$ ${guardado.precio}</p>
-                            <button class="btn btn-info">comprar</button>
-                            <button class="btn btn-danger">eliminar</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            `
-        });
-        
-        //este codigo permite comprar productos del carrito 
-        pedirDatos.forEach((producto,index)=>{
-            document.getElementById(`producto${index}`).children[0].children[1].children[0].children[2].addEventListener(`click`,()=>{
-                Swal.fire({
-                    position: 'center',
-                    icon: 'success',
-                    title: 'Compra realizada',
-                    showConfirmButton: false,
-                    timer: 1500
-                });
-                document.getElementById(`producto${index}`).remove();
-                changito.splice(index,1);
-                localStorage.setItem("changito",JSON.stringify(changito));
-            })
-            document.getElementById(`producto${index}`).children[0].children[1].children[0].children[3].addEventListener(`click`,()=>{
-                document.getElementById(`producto${index}`).remove();
-                changito.splice(index,1);
-                localStorage.setItem("changito",JSON.stringify(changito));
-            });
-        });
-    };
-});
-
-//funcion eliminar los productos del carrito
-// function deleteProduct() {
-//     document.getElementById(`producto${index}`).remove();
-//     changito.splice(index, 1);
-//     localStorage.setItem("changito", JSON.stringify(changito));
-// }
-
