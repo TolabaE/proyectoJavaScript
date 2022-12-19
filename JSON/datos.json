@@ -81,14 +81,6 @@
     },
     {
         "id":11,
-        "nombre":"Motoguadaña",
-        "marca":"Stihl FS 420",
-        "stock":12,
-        "precio":55000,
-        "img":"https://nogalpark.com/archivos/recortes/motoguadana-stihl-fs-450-nogalpark.jpg"
-    },
-    {
-        "id":12,
         "nombre":"Tenaza",
         "marca":"Gherardi",
         "stock":15,
@@ -96,7 +88,7 @@
         "img":"http://www.sidercon.com/imagenes/8201-572-tenaza-carpintero-200mm-bahco-541-d-200a.jpg"
     },
     {
-        "id":13,
+        "id":12,
         "nombre":"Pinza",
         "marca":"Gherardi",
         "stock":12,
@@ -104,7 +96,7 @@
         "img":"https://www.martinezescalada.com.ar/551-extra_large_default/pinza-universal-992801-7.jpg"
     },
     {
-        "id":14,
+        "id":13,
         "nombre":"Plomada Albañil",
         "marca":"Toth",
         "stock":10,
@@ -112,7 +104,7 @@
         "img":"https://www.hierrosmaldonado.com.ar/1557-large_default/plomada-400-gr.jpg"
     },
     {
-        "id":15,
+        "id":14,
         "nombre":"Balde",
         "marca":"Plastic",
         "stock":15,
@@ -120,7 +112,7 @@
         "img":"https://www.pronor.com.ar/images/PM-BALCHP1599587895908.jpg"
     },
     {
-        "id":16,
+        "id":15,
         "nombre":"Nivel",
         "marca":"Bellota",
         "stock":20,
@@ -128,7 +120,7 @@
         "img":"https://es.cornilleau.com/4773-large_default/nivel-de-burbuja.jpg"
     },
     {
-        "id":17,
+        "id":16,
         "nombre":"Martillo",
         "marca":"Masa",
         "stock":10,
@@ -136,7 +128,7 @@
         "img":"https://assets.tramontina.com.br/upload/tramon/imagens/GAR/40682008PDM001G.jpg"
     },
     {
-        "id":18,
+        "id":17,
         "nombre":"Tanza",
         "marca":"Grilon",
         "stock":10,
@@ -144,7 +136,7 @@
         "img":"https://www.pronor.com.ar/images/00000000RC-7553699874RC-75536.jpg"
     },
     {
-        "id":19,
+        "id":18,
         "nombre":"Cuchara",
         "marca":"Gherardi",
         "stock":12,
@@ -152,7 +144,7 @@
         "img":"https://arcencohogar.vtexassets.com/arquivos/ids/300009-800-800?v=637665764479800000&width=800&height=800&aspect=true"
     },
     {
-        "id":20,
+        "id":19,
         "nombre":"Moto Sierra",
         "marca":"Stihl MS 461",
         "stock":10,

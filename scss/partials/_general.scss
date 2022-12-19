@@ -13,27 +13,22 @@ body{
 
 @media (min-width:320px){
     .contenedor-navbar{
-        
         .navbar-color{
             background-color: $paleta-color1;
             color: beige;
-
             div{
                 .navbar-brand{
                     color: antiquewhite;
                     text-transform: uppercase;
                     font-weight: 600;
                 }
-
                 ul{
                     display: flex;
                     flex-direction: row;
                     justify-content: space-around;
                     list-style-type: none;
-
                     li{
                         padding-left: 30px;
-
                         a{
                             text-decoration: none;
                             padding: 12px 20px;
@@ -43,8 +38,7 @@ body{
                         .imgNav{
                             width: 35px;
                         }
-                        .btn{
-                            margin-top: 8px;
+                        .button{
                             background-color: $paleta-color1;
                         }   
                     }

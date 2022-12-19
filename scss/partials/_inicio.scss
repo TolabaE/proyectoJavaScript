@@ -1,6 +1,8 @@
 @media (min-width:320px){
 
     .box-titulo{
+        display: flex;
+        justify-content: space-between;
         background-color: $paleta-color1;
         padding: 15px 0px;
         text-align: center;
@@ -8,16 +10,13 @@
     }
     .seccion-uno{
         padding: 0px 10px 10px 10px;
-
         #cajaUno{
             display: flex;
             flex-wrap: wrap;
             align-content: stretch;
-    
             .boxJs{
                 margin: auto;
                 margin-top: 10px;
-
                 .card{
                     width: 11rem;
                     height: 24rem;
@@ -28,12 +27,10 @@
                     &.card:hover{
                         box-shadow: 0px 0px 8px 10px rgb(112, 199, 214);
                     }
-
                     .card-img-top{
                         width: 172px;
                         height: 140px;
                     }
-
                     button{
                         margin-left: 25px;
                     }
@@ -41,10 +38,9 @@
             }
         }
     }
-
     .contenedor-form{
-
         .caja-form{
+            text-align: center;
             background-color: $paleta-color2;
             padding: 30px;
             padding-left: 30px;
@@ -52,22 +48,24 @@
             margin: 10px 40px;
         }
     }
+    .opinion-padre{
+        .card{
+            background-color: $paleta-color2;
+            margin: 10px 10%;  
+        }
+    }
 }
 @media (min-width:768px){
-
     .seccion-uno{
         padding: 0px 20px 20px 20px;
-
         #cajaUno{
             display: flex;
             flex-wrap: wrap;
             align-content: stretch;
             padding: 20px;
-    
             .boxJs{
                 margin: auto;
                 padding: 10px;
-
                 .card{
                     width:16rem;
                     height: 30rem;
@@ -75,7 +73,6 @@
                     background-color: $paleta-color2;
                     border: 2px solid $paleta-color4;
                     margin: 10px;
-
                     button{
                         margin-left: 30%;
                     }
@@ -87,16 +84,14 @@
             }
         }
     }
-    
     .contenedor-form{
-
         .caja-form{
+            text-align: left;
             background-color: $paleta-color2;
             padding: 20px;
             padding-left: 50px;
             border-radius: 10px;
             margin: 5% 30%;
-
         }
     }
     .opinion-padre{
@@ -104,6 +99,5 @@
             background-color: $paleta-color2;
             margin: 10px 10%;  
         }
-        
     }
 }

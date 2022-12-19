@@ -31,8 +31,7 @@ body {
           font-size: x-large; }
         .contenedor-navbar .navbar-color div ul li .imgNav {
           width: 35px; }
-        .contenedor-navbar .navbar-color div ul li .btn {
-          margin-top: 8px;
+        .contenedor-navbar .navbar-color div ul li .button {
           background-color: #0077b6; }
   .tituloDiv {
     background-color: #5fa8d3;
@@ -46,6 +45,8 @@ body {
 
 @media (min-width: 320px) {
   .box-titulo {
+    display: flex;
+    justify-content: space-between;
     background-color: #0077b6;
     padding: 15px 0px;
     text-align: center;
@@ -74,11 +75,15 @@ body {
           .seccion-uno #cajaUno .boxJs .card button {
             margin-left: 25px; }
   .contenedor-form .caja-form {
+    text-align: center;
     background-color: #3d8ef8;
     padding: 30px;
     padding-left: 30px;
     border-radius: 10px;
-    margin: 10px 40px; } }
+    margin: 10px 40px; }
+  .opinion-padre .card {
+    background-color: #3d8ef8;
+    margin: 10px 10%; } }
 
 @media (min-width: 768px) {
   .seccion-uno {
@@ -104,6 +109,7 @@ body {
             width: 252px;
             height: 240px; }
   .contenedor-form .caja-form {
+    text-align: left;
     background-color: #3d8ef8;
     padding: 20px;
     padding-left: 50px;
@@ -114,18 +120,43 @@ body {
     margin: 10px 10%; } }
 
 @media (min-width: 320px) {
-  .tituloCarrito {
-    text-align: center;
-    background-color: #5fa8d3;
-    padding: 10px; }
-  .caja-box-changuito {
+  .caja-box-changuito .container-cart {
+    display: flex;
+    margin: 10px 0px;
+    background-color: #3d8ef8; }
+    .caja-box-changuito .container-cart .container-image {
+      width: 150px; }
+      .caja-box-changuito .container-cart .container-image .image-style {
+        width: 100%;
+        height: 100%; }
+    .caja-box-changuito .container-cart .container-text {
+      padding: 5px 0px;
+      margin: auto;
+      color: black;
+      margin-left: 5px; }
+  .modal-body {
     background-color: #caf0f8;
-    margin-left: 20px;
-    padding: 10px;
-    position: absolute;
-    z-index: 1; }
-    .caja-box-changuito .bg-primar {
-      color: #03045e;
-      text-align: center;
-      font-weight: 700;
-      font-size: xx-large; } }
+    margin: 0px 0px; }
+    .modal-body #buttonClear {
+      text-align: center; }
+      .modal-body #buttonClear .alert-cart-clear {
+        color: red;
+        font-weight: 800;
+        font-size: xx-large; }
+    .modal-body .container-footer-cart {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: baseline; }
+      .modal-body .container-footer-cart #precioTotal {
+        font-weight: 700;
+        color: black; }
+  .modal-title {
+    color: black; } }
+
+@media (min-width: 768px) {
+  .caja-box-changuito .container-cart .container-text {
+    margin-left: 20px; }
+  .caja-box-changuito .img-cart-clear {
+    width: 400px;
+    height: 300px; } }

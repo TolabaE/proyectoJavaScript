@@ -25,7 +25,7 @@ formContacto.addEventListener(`submit`,(event)=>{
     //pushea los datos obtenidos al array del localstorage.
     consultas.push(consulta);
     localStorage.setItem("consultas",JSON.stringify(consultas));
-    formContacto.reset();
+    formContacto.reset();//formatea los datos que tenia el form.
 });
 
 //permite obtener los datos del localstorage.

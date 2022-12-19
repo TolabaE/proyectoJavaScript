@@ -1,21 +1,60 @@
 @media (min-width:320px){
-    
-    .tituloCarrito{
-        text-align: center;
-        background-color: $paleta-color3;
-        padding: 10px;
-    }
     .caja-box-changuito{
+        .container-cart{
+            display: flex;
+            margin: 10px 0px;
+            background-color: $paleta-color2;
+            .container-image{
+                width: 150px;
+                .image-style{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            .container-text{
+                padding: 5px 0px;
+                margin: auto;
+                color: black;
+                margin-left: 5px;
+            }
+        }
+    }
+    .modal-body{
         background-color: $paleta-color5;
-        margin-left: 20px;
-        padding: 10px;
-        position: absolute;
-        z-index: 1;
-        .bg-primar{
-            color: $paleta-color4;
+        margin: 0px 0px;
+        #buttonClear{
             text-align: center;
-            font-weight: 700;
-            font-size: xx-large;
+            .alert-cart-clear{
+                color: red;
+                font-weight: 800;
+                font-size: xx-large;
+            }
+        }
+        .container-footer-cart{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: baseline;
+            #precioTotal{
+                font-weight: 700;
+                color: black;
+            }
+        }
+    }
+    .modal-title{
+        color: black;
+    }
+}
+@media (min-width:768px){
+    .caja-box-changuito{
+        .container-cart{
+            .container-text{
+                margin-left: 20px;
+            }
+        }
+        .img-cart-clear{
+            width: 400px;
+            height: 300px;
         }
     }
 }
