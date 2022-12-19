@@ -1,5 +1,10 @@
-//lo que hace este codigo es que el usuario pueda consultar y sus datos ser guardados en el localstorage.
+"use strict"
+const formContacto = document.getElementById("cajaForm");
+const button = document.getElementById("btnPedir");
+const cajaDatos = document.getElementById("contenedor-opinion");
 
+
+//creo una clase para guardar los datos que recibo del formulario de contacto.
 class Datos{
     constructor(nombre,apellido,email,nota,telefono){
         this.nombre = nombre;
@@ -13,10 +18,6 @@ class Datos{
 //consulto los datos del localstorage,si encuentra devuelvos esos datos,sino devuelve una array vacio.
 const consultas =JSON.parse(localStorage.getItem('consultas'))??[];
 
-const formContacto = document.getElementById("cajaForm");
-const button = document.getElementById("btnPedir");
-const cajaDatos = document.getElementById("contenedor-opinion");
-
 formContacto.addEventListener(`submit`,(event)=>{
     event.preventDefault();
     const datIngresado = new FormData(event.target);
@@ -28,12 +29,13 @@ formContacto.addEventListener(`submit`,(event)=>{
     formContacto.reset();//formatea los datos que tenia el form.
 });
 
-//permite obtener los datos del localstorage.
-const datosLocales = JSON.parse(localStorage.getItem("consultas"));
-
 //este codigo nos permite que el usuario al ingresar su consulta y enviarlo puede visualizarlo en el DOM 
 //al hacer click en ver preguntas frecuentes.
 button.addEventListener(`click`,()=>{
+    cajaDatos.innerHTML = "";//esto permite que cada vez que se ejecute el evento se limpie lo que habia.
+    //permite obtener los datos del localstorage.
+    const datosLocales = JSON.parse(localStorage.getItem("consultas"));
+    
     datosLocales.forEach((consultas,index) => {
         cajaDatos.innerHTML +=`
         <div class="card box" id="datos${index}">

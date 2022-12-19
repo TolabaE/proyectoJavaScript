@@ -46,7 +46,7 @@ body {
 @media (min-width: 320px) {
   .box-titulo {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     background-color: #0077b6;
     padding: 15px 0px;
     text-align: center;
