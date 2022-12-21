@@ -7,13 +7,39 @@ const btnFinish = document.getElementById('buttonFinish');
 
 
 //creo el localstorage con un array vacio.
-const changito = JSON.parse(localStorage.getItem('changito')) ?? [];
+let changito = JSON.parse(localStorage.getItem('changito')) ?? [];
 
 //hago una consulta mediante una promesa y eso la guardo en una funcion para usarla despues.
 const arrayProduct=async()=> {
     const traer = await fetch(`./JSON/datos.json`)
     const datos = await traer.json()
     return datos;
+}
+
+//guardo en una funcion la alerta de producto agregado al carrito.
+const alertProductAdd = () =>{
+    Toastify({
+        text: "Producto agregado al carrito",
+        duration: 3000,
+        close: true,
+        gravity: "bottom", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+            background: "linear-gradient(to right, #F16529, #E44D26)",
+        },
+        onClick: function () {} // Callback after click
+    }).showToast();
+}
+
+//esta funcion elimina todo del DOM y el localstorage. ya se vaciando o comprando todo.
+const deleteAllCart = ()=>{
+    dataStorage = [];//lo igualo a un arreglo vacio.
+    containerCart.innerHTML = "";//igual el DOM a un string vacio. se limpian las cards
+    localStorage.setItem("changito",JSON.stringify(dataStorage)) //vuelvo a sobre escribir en el local storage.
+    btnClear.innerHTML =`<h3 class="alert-cart-clear">Carrito Vacio</h3>`;
+    btnFinish.innerHTML ="";//elimina al Boton de comprar productos
+    elTotal.innerHTML =""; //elimina la funcion de precios
 }
 
 //esta funcion suma el total de los precios agregados al carrito y los pinta en el DOM.
@@ -52,23 +78,23 @@ fetch(`./JSON/datos.json`)
     agrega un evento, guarda los datos en el localstorage y los muestra en el dom.*/
     datos.forEach((producto, indice) => {
         document.getElementById(`producto${indice}`).children[1].children[4].addEventListener(`click`, () => {
-            //muestra una alerta al presionar el boton agregar carrito.
-            Toastify({
-                text: "Producto agregado al carrito",
-                duration: 3000,
-                close: true,
-                gravity: "bottom", // `top` or `bottom`
-                position: "right", // `left`, `center` or `right`
-                stopOnFocus: true, // Prevents dismissing of toast on hover
-                style: {
-                    background: "linear-gradient(to right, #F16529, #E44D26)",
-                },
-                onClick: function () {} // Callback after click
-            }).showToast();
-            //este codigo permite ver,si el producto agregado existe agrego la cantidad en 1,sino lo crea.
+
+            //este codigo permite ver si el producto existe,le sumo a la cantidad sumando,sino lo crea con cantidad 1
             if (changito.some(elem => elem.id === producto.id)) {
-                let objetoClickeado = changito.find(elem => elem.id === producto.id)
-                objetoClickeado.cantidad++
+                //traigo el objeto para sumarle la propiedad cantidad.
+                let objetCart = changito.find(cart => cart.id === producto.id);
+                //si la cantidad del producto agrego es menor al stock entonces lo agrege sino que tire una alerta. 
+                if (objetCart.cantidad < producto.stock) {
+                    objetCart.cantidad++;
+                    //muestra una alerta cuando el producto se agrega al carrito.
+                    alertProductAdd();
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'No hay stock disponible!',
+                    })
+                }
             } else {
                 const agregadoChangito = {
                     id: producto.id,
@@ -93,7 +119,6 @@ arrayProduct()
             btnClear.innerHTML =`<h3 class="alert-cart-clear">Carrito Vacio</h3>`;
             btnFinish.innerHTML ="";//elimina al Boton de comprar productos
         }else{
-
             containerCart.innerHTML = "";//esto hace que cada vez que consulto al carrito,lo que habia se borre y escriba de nuevo.
             btnClear.innerHTML =`<button class="btn btn-danger">Vaciar Carrito</button>`;
             products.forEach(element => {
@@ -142,12 +167,7 @@ arrayProduct()
                     })
                     //este evento elimina todos los productos del local storage.
                     btnClear.children[0].addEventListener('click',()=>{
-                        dataStorage = [];//lo igualo a un arreglo vacio.
-                        containerCart.innerHTML = "";//igual el DOM a un string vacio. se limpian las cards
-                        localStorage.setItem("changito",JSON.stringify(dataStorage)) //vuelvo a sobre escribir en el local storage.
-                        btnClear.innerHTML =`<h3 class="alert-cart-clear">Carrito Vacio</h3>`;
-                        btnFinish.innerHTML ="";//elimina al Boton de comprar productos
-                        elTotal.innerHTML =""; //elimina la funcion de precios
+                        deleteAllCart();
                     })
                     //este boton finaliza la compra vaciando el carrito y eliminando del local storage.
                     btnFinish.children[0].addEventListener('click',()=>{
@@ -158,12 +178,7 @@ arrayProduct()
                             showConfirmButton: false,
                             timer: 1500
                         })
-                        dataStorage = [];//lo igualo a un arreglo vacio.
-                        containerCart.innerHTML = "";//igual el DOM a un string vacio. se limpian las cards
-                        localStorage.setItem("changito",JSON.stringify(dataStorage)) //vuelvo a sobre escribir en el local storage.
-                        btnClear.innerHTML =`<h3 class="alert-cart-clear">Carrito Vacio</h3>`;
-                        btnFinish.innerHTML ="";//elimina al Boton de comprar productos;
-                        elTotal.innerHTML =""; //elimina la funcion de precios;
+                        deleteAllCart();
                     });
                 };
             });
