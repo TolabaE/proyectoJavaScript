@@ -101,6 +101,7 @@ fetch(`./JSON/datos.json`)
                     cantidad: 1
                 };
                 changito.push(agregadoChangito);
+                alertProductAdd();
             }
             //guardo los datos en el array del localstorage
             localStorage.setItem("changito", JSON.stringify(changito));

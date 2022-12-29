@@ -61,20 +61,21 @@ Esta subido a netlify y podrás interactuar con ella.
 * [Bootstrap](https://getbootstrap.com/docs/5.2/getting-started/introduction/).
  
  ## Autores ✒️
-* Eduardo Tolaba
-
-Podes seguirme en [Linkedln](www.linkedin.com/in/tolaba-eduardo-esequiel)
+* Eduardo Tolaba (Podes seguirme en [Linkedln](www.linkedin.com/in/tolaba-eduardo-esequiel))
 
 ## Licencia 📄
 Este proyecto esta bajo la licencia de Eduardo Tolaba.
 
 ## Expresiones de Gratitud 🎁
 
-Agradecer a mi profesor de JavaScript por su excelente forma de explicar las clases.
+Felicitar a mi profesor de JavaScript por su excelente forma de explicar las clases 🤓.
 * [Francisco Pugh](https://www.linkedin.com/in/francisco-pugh/).
 
 A mi tutor que siempre estuvo presente para mis correcciones en tiempo y forma.
 * Tomas Cabrera Canay
+
+Y por ultimo agradecer a mi compañero de cursada 🍺, quien me ayudo a resolver algunos problemas que tenia en mi codigo. 
+* [Alejandro Portaluppi](https://www.linkedin.com/in/alejandro-portaluppi/)
 
 ---
 ⌨️ con ❤️ por [Eduardo Tolaba](https://github.com/TolabaE) 😊
