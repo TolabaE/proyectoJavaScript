@@ -93,7 +93,7 @@
         "marca":"Gherardi",
         "stock":12,
         "precio":1250,
-        "img":"https://www.martinezescalada.com.ar/551-extra_large_default/pinza-universal-992801-7.jpg"
+        "img":"https://http2.mlstatic.com/D_NQ_NP_604842-MLA42229707522_062020-O.webp"
     },
     {
         "id":13,
@@ -150,5 +150,13 @@
         "stock":10,
         "precio":42000,
         "img":"https://laquintasi.com/wp-content/uploads/2016/04/33.motosierra-stihl-ms-461.jpg"
+    },
+    {
+        "id":20,
+        "nombre":"Caja de Herramientas",
+        "marca":"Stanley",
+        "stock":"12",
+        "precio":18599,
+        "img":"https://acdn.mitiendanube.com/stores/002/003/170/products/351-4f550f7ea9b3600c3916625641121419-640-0.jpg"
     }
 ]

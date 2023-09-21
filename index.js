@@ -5,6 +5,30 @@ const elTotal = document.getElementById("precioTotal");
 const btnClear = document.getElementById('buttonClear');
 const btnFinish = document.getElementById('buttonFinish');
 
+const swiper = new Swiper('.swiper', {
+    // Optional parameters
+    // direction: 'vertical',
+    loop: true,
+
+    // If we need pagination
+    pagination: {
+        el: '.swiper-pagination',
+    },
+
+    // Navigation arrows
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+
+    // And if we need scrollbar
+    scrollbar: {
+        el: '.swiper-scrollbar',
+    },
+    autoplay: {
+        delay: 4000,
+    },
+});
 
 //creo el localstorage con un array vacio.
 let changito = JSON.parse(localStorage.getItem('changito')) ?? [];
@@ -34,9 +58,8 @@ const alertProductAdd = () =>{
 
 //esta funcion elimina todo del DOM y el localstorage. ya se vaciando o comprando todo.
 const deleteAllCart = ()=>{
-    dataStorage = [];//lo igualo a un arreglo vacio.
     containerCart.innerHTML = "";//igual el DOM a un string vacio. se limpian las cards
-    localStorage.setItem("changito",JSON.stringify(dataStorage)) //vuelvo a sobre escribir en el local storage.
+    localStorage.setItem("changito",JSON.stringify([])) //vuelvo a sobre escribir en el local storage.
     btnClear.innerHTML =`<h3 class="alert-cart-clear">Carrito Vacio</h3>`;
     btnFinish.innerHTML ="";//elimina al Boton de comprar productos
     elTotal.innerHTML =""; //elimina la funcion de precios
@@ -68,7 +91,10 @@ fetch(`./JSON/datos.json`)
                     <p class="card-text">${cosas.marca}</p>
                     <h6 class="card-text">stock:${cosas.stock} unidades</h6>
                     <h3 class="card-text">$${cosas.precio}</h3>
-                    <button class="btn btn-primary" id="btn-agregar">agregar</button>
+                    <div class="container__box-btn">
+                        
+                        <button class="btn btn-primary" id="btn-agregar">agregar</button>
+                    </div>
                 </div>
             </div>
         </div>`
@@ -186,3 +212,9 @@ arrayProduct()
         };
     });
 });
+
+{/* <div class="container-btn">
+    <button class="btn btn1 btn-danger">-</button>
+    <span>0</span>
+    <button class="btn btn2 btn-danger">+</button>
+</div> */}

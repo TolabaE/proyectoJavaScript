@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./css/style.css">
     <title>Inicio</title>
 </head>
+
 <body>
     <header>
         <div class="contenedor-navbar">
@@ -17,16 +21,19 @@
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false"
                         aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"><img src="https://img.icons8.com/office/30/000000/menu--v4.png"/></span>
+                        <span class="navbar-toggler-icon"><img
+                                src="https://img.icons8.com/office/30/000000/menu--v4.png" /></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
                         <a class="navbar-brand" href="index.html">Ferreteria</a>
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="index.html"><img class="imgNav" src="https://img.icons8.com/material/96/000000/home--v5.png"/></a>
+                                <a class="nav-link active" aria-current="page" href="index.html"><img class="imgNav"
+                                        src="https://img.icons8.com/material/96/000000/home--v5.png" /></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="./pages/contacto.html"><img class="imgNav" src="https://img.icons8.com/ios-glyphs/90/000000/gmail.png"/></a>
+                                <a class="nav-link" href="./pages/contacto.html"><img class="imgNav"
+                                        src="https://img.icons8.com/ios-glyphs/90/000000/gmail.png" /></a>
                             </li>
                         </ul>
                         <form class="d-flex">
@@ -42,7 +49,7 @@
         <div></div>
         <h1>Catalogo</h1>
         <div type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="button" id="boton-ver-carrito">
-            <img class="imgNav" src="https://img.icons8.com/pastel-glyph/35/1A1A1A/shopping-trolley--v2.png"/>
+            <img class="imgNav" src="https://img.icons8.com/pastel-glyph/35/1A1A1A/shopping-trolley--v2.png" />
         </div>
     </div>
     <!-- Modal -->
@@ -76,28 +83,47 @@
         </div>
     </div>
 
+    <div class="swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide"><img class="swiper-imagen" src="https://img.freepik.com/foto-gratis/composicion-plana-herramientas-accesorios-electricista_169016-24022.jpg?w=2000" alt=""></div>
+            <div class="swiper-slide"><img class="swiper-imagen" src="https://www.pmgchile.com/wp-content/uploads/2018/08/shutterstock_710141932baja.jpg" alt=""></div>
+            <div class="swiper-slide"><img class="swiper-imagen" src="https://blog.deacero.com/hs-fs/hubfs/productos%20de%20ferreteria%20herramientas%20manuales.jpg?width=755&name=productos%20de%20ferreteria%20herramientas%20manuales.jpg" alt=""></div>
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <!-- If we need scrollbar -->
+        <div class="swiper-scrollbar"></div>
+    </div>
+
     <section class="seccion-uno">
-        <div class="tituloDiv">
+        <div class="tituloInicio">
             <h2>¡Todo para el Campo y la Construcción!</h2>
         </div>
         <div id="cajaUno">
-        <!-- aqui se inyecta todos los productos que son traidos de una base de datos
+            <!-- aqui se inyecta todos los productos que son traidos de una base de datos
         (la carpeta JSON contiene un array de objetos que simula ser la base) -->
         </div>
     </section>
     <footer>
-        <div>
-            <p>Visitanos en nuestos sucursal mas cercana:</p>
-            <p>Av.Gral Guemes s/n Cachi-Salta</p>
-            <p>seguinos en nuestras redes:</p>
-            <p>Facebook: ferreteriaSjose  Instagram: @FerreteriaJose</p>
-            <p>www.ferreteriasanjose.com.ar</p>
-        </div>
+        <p>Visitanos en nuestos sucursal mas cercana:</p>
+        <p>Av.Gral Guemes s/n Cachi-Salta</p>
+        <p>seguinos en nuestras redes:</p>
+        <p>Facebook: ferreteriaSjose Instagram: @FerreteriaJose</p>
+        <p>www.ferreteriasanjose.com.ar</p>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="index.js"></script>
 </body>
+
 </html>

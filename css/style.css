@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
 * {
   padding: 0px;
   margin: 0px;
@@ -41,7 +42,11 @@ body {
   footer {
     background-color: #0077b6;
     text-align: center;
-    padding: 5px; } }
+    padding: 2rem 5px; } }
+
+@media screen and (max-width: 767px) {
+  body {
+    font-size: small; } }
 
 @media (min-width: 320px) {
   .box-titulo {
@@ -51,6 +56,11 @@ body {
     padding: 15px 0px;
     text-align: center;
     margin-top: 5px; }
+  .swiper {
+    margin: 10px; }
+  .swiper-imagen {
+    width: 100vw;
+    height: 200px; }
   .seccion-uno {
     padding: 0px 10px 10px 10px; }
     .seccion-uno #cajaUno {
@@ -62,7 +72,7 @@ body {
         margin-top: 10px; }
         .seccion-uno #cajaUno .boxJs .card {
           width: 11rem;
-          height: 24rem;
+          height: auto;
           color: black;
           background-color: #3d8ef8;
           border: 2px solid #03045e;
@@ -72,8 +82,32 @@ body {
           .seccion-uno #cajaUno .boxJs .card .card-img-top {
             width: 172px;
             height: 140px; }
-          .seccion-uno #cajaUno .boxJs .card button {
-            margin-left: 25px; }
+          .seccion-uno #cajaUno .boxJs .card .container__box-btn {
+            display: flex;
+            justify-content: center;
+            flex-direction: column; }
+            .seccion-uno #cajaUno .boxJs .card .container__box-btn .container-btn {
+              position: relative;
+              display: flex;
+              justify-content: center;
+              height: 50px; }
+              .seccion-uno #cajaUno .boxJs .card .container__box-btn .container-btn .btn {
+                width: 60px; }
+              .seccion-uno #cajaUno .boxJs .card .container__box-btn .container-btn .btn1 {
+                position: absolute;
+                left: 0; }
+              .seccion-uno #cajaUno .boxJs .card .container__box-btn .container-btn .btn2 {
+                position: absolute;
+                right: 0; }
+              .seccion-uno #cajaUno .boxJs .card .container__box-btn .container-btn span {
+                font-size: 24px;
+                font-weight: 600; }
+    .seccion-uno .tituloInicio {
+      text-align: center;
+      font-size: 24px;
+      font-weight: 600;
+      color: #03045e;
+      padding-top: 10px; }
   .contenedor-form .caja-form {
     text-align: center;
     background-color: #3d8ef8;
@@ -89,35 +123,34 @@ body {
   .seccion-uno {
     padding: 0px 20px 20px 20px; }
     .seccion-uno #cajaUno {
-      display: flex;
-      flex-wrap: wrap;
-      align-content: stretch;
       padding: 20px; }
       .seccion-uno #cajaUno .boxJs {
         margin: auto;
         padding: 10px; }
         .seccion-uno #cajaUno .boxJs .card {
           width: 16rem;
-          height: 30rem;
-          color: black;
-          background-color: #3d8ef8;
-          border: 2px solid #03045e;
           margin: 10px; }
-          .seccion-uno #cajaUno .boxJs .card button {
-            margin-left: 30%; }
           .seccion-uno #cajaUno .boxJs .card .card-img-top {
             width: 252px;
             height: 240px; }
+    .seccion-uno .tituloInicio {
+      font-size: 32px;
+      font-weight: 700; }
   .contenedor-form .caja-form {
     text-align: left;
-    background-color: #3d8ef8;
     padding: 20px;
     padding-left: 50px;
     border-radius: 10px;
     margin: 5% 30%; }
   .opinion-padre .card {
     background-color: #3d8ef8;
-    margin: 10px 10%; } }
+    margin: 10px 10%; }
+  .swiper {
+    margin: 15px; }
+  .swiper-imagen {
+    width: 100vw;
+    height: 600px;
+    object-fit: fill; } }
 
 @media (min-width: 320px) {
   .caja-box-changuito .container-cart {
