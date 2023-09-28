@@ -6,39 +6,27 @@ const btnClear = document.getElementById('buttonClear');
 const btnFinish = document.getElementById('buttonFinish');
 
 const swiper = new Swiper('.swiper', {
-    // Optional parameters
-    // direction: 'vertical',
     loop: true,
-
     // If we need pagination
     pagination: {
         el: '.swiper-pagination',
     },
-
     // Navigation arrows
     navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
     },
-
     // And if we need scrollbar
     scrollbar: {
         el: '.swiper-scrollbar',
     },
     autoplay: {
-        delay: 4000,
-    },
+        delay: 3000,
+    }
 });
 
 //creo el localstorage con un array vacio.
 let changito = JSON.parse(localStorage.getItem('changito')) ?? [];
-
-//hago una consulta mediante una promesa y eso la guardo en una funcion para usarla despues.
-const arrayProduct=async()=> {
-    const traer = await fetch(`./JSON/datos.json`)
-    const datos = await traer.json()
-    return datos;
-}
 
 //guardo en una funcion la alerta de producto agregado al carrito.
 const alertProductAdd = () =>{
@@ -78,7 +66,12 @@ function actualizarPrecioTotal(dataJson, datastorage) {
 }
 
 fetch(`./JSON/datos.json`)
-.then(response => response.json())
+.then(response => { 
+    if(!response.ok){
+        throw new Error('ah ocurrido un error')
+    }
+    return response.json();
+})
 .then(datos => {
 
     datos.forEach((cosas, indice) => {
@@ -92,14 +85,12 @@ fetch(`./JSON/datos.json`)
                     <h6 class="card-text">stock:${cosas.stock} unidades</h6>
                     <h3 class="card-text">$${cosas.precio}</h3>
                     <div class="container__box-btn">
-                        
-                        <button class="btn btn-primary" id="btn-agregar">agregar</button>
+                        <button class="btn btn-danger" id="btn-agregar">agregar</button>
                     </div>
                 </div>
             </div>
         </div>`
     });
-
     /*Este codigo recorre cada una de las card del arrays y al presionar el botton agregar,
     agrega un evento, guarda los datos en el localstorage y los muestra en el dom.*/
     datos.forEach((producto, indice) => {
@@ -133,11 +124,17 @@ fetch(`./JSON/datos.json`)
             localStorage.setItem("changito", JSON.stringify(changito));
         });
     });
-});
+})
+.catch(err =>{
+    console.error(err);
+})
 
-//llamo a la funcion que contiene al arreglo de productos con un fetch.
-arrayProduct()
-.then(products=>{
+
+//hago una consulta mediante una promesa y eso la guardo en una funcion para usarla despues.
+const arrayProduct = async()=> {
+
+    const datos = await fetch(`./JSON/datos.json`);
+    const products = await datos.json();
 
     botonVerCarrito.addEventListener('click',()=>{
         //traigo los datos almacenados en el local Storage.
@@ -148,7 +145,9 @@ arrayProduct()
         }else{
             containerCart.innerHTML = "";//esto hace que cada vez que consulto al carrito,lo que habia se borre y escriba de nuevo.
             btnClear.innerHTML =`<button class="btn btn-danger">Vaciar Carrito</button>`;
-            products.forEach(element => {
+
+            for (let index = 0; index < products.length; index++) {
+                const element = products[index];
                 //hago una comparacion de datos,si el id del carrito coincide con algun del array de productos 
                 if(dataStorage.some(cart=>cart.id == element.id)){
                     //obtengo la cantidad de veces que se agrego el producto.
@@ -169,9 +168,10 @@ arrayProduct()
                     btnFinish.innerHTML = `<button class="btn btn-primary">Finalizar Compra</button>`;
                     actualizarPrecioTotal(products,dataStorage);
                 }
-            });
+            };
 
-            products.forEach(element=>{
+            for (let index = 0; index < products.length; index++) {
+                const element = products[index];
                 //si el id del objeto guardado en el local storage es igual al id del producto,ejecute lo siguiente.
                 if (dataStorage.some(item=>item.id == element.id)) {
                     //busco el indice del boton de cada objeto en el carrito
@@ -184,20 +184,22 @@ arrayProduct()
                         const deleteProduct = dataStorage[objectIndex];//obtengo el indice en el carrito.
                         dataStorage.splice(deleteProduct,1);//elimino del array el producto
                         localStorage.setItem("changito",JSON.stringify(dataStorage));
+                        changito = dataStorage; //igualo el actual carrito con el changuito que ya venia manejando
                         actualizarPrecioTotal(products,dataStorage);//esta funcion actualiza el precio.
                         //si el localStorage esta vacio que limpie el precio total, boton comprar y agrege la alerta del carrito vacio.
                         if (dataStorage.length === 0) {
-                            elTotal.innerHTML = "";
-                            btnFinish.innerHTML = "";
-                            btnClear.innerHTML =`<h3 class="alert-cart-clear">Carrito Vacio</h3>`;
+                            changito = [];
+                            deleteAllCart();
                         }
                     })
                     //este evento elimina todos los productos del local storage.
                     btnClear.children[0].addEventListener('click',()=>{
+                        changito = [];
                         deleteAllCart();
                     })
                     //este boton finaliza la compra vaciando el carrito y eliminando del local storage.
                     btnFinish.children[0].addEventListener('click',()=>{
+                        changito = [];
                         Swal.fire({
                             position: 'center',
                             icon: 'success',
@@ -208,10 +210,11 @@ arrayProduct()
                         deleteAllCart();
                     });
                 };
-            });
+            };
         };
     });
-});
+}
+arrayProduct()
 
 {/* <div class="container-btn">
     <button class="btn btn1 btn-danger">-</button>

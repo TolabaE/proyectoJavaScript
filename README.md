@@ -4,7 +4,7 @@ herramientas para el sector agricola. Ademas tiene una pagina de contacto que si
 en particular.
 Los mismo datos una vez procesados son pintados en el DOM.y queda como referencia para que otra persona vea, si otros clientes ya hicieron la misma consulta.
 
-<img src="./img/homepageproyectjs.png" alt="pantalla general del Inicio">
+<img src="./img/imagendefondo.png" alt="pantalla general del Inicio">
 
 <img src="./img/contactpageproyectjs.png" alt="pantalla general de la pagina contacto">
 
